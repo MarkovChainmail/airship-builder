@@ -38,8 +38,7 @@ export default function App() {
 
       <aside className="sidebar">
         <h3>Sidebar</h3>
-        <p>Maybe put dice rolls here? Or a database of ships you've built?</p>
-        <ul><li>example</li></ul>
+        <p>Credit to DragonDean for his airship guide homebrew and to my little brother for the basic CSS/HTML template. 5e DND statblock by https://codepen.io/retractedhack</p>
       </aside>
     </div>
   );
