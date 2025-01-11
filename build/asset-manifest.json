@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/airship-builder/static/css/main.ce587d41.css",
+    "main.js": "/airship-builder/static/js/main.c42ab54e.js",
+    "index.html": "/airship-builder/index.html",
+    "main.ce587d41.css.map": "/airship-builder/static/css/main.ce587d41.css.map",
+    "main.c42ab54e.js.map": "/airship-builder/static/js/main.c42ab54e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ce587d41.css",
+    "static/js/main.c42ab54e.js"
+  ]
+}

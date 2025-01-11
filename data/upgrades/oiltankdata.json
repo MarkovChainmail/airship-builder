@@ -1,0 +1,37 @@
+{
+    "name": "Whale Oil Tank",
+    "price": {
+        "small": 100,
+        "medium": 400,
+        "large": 750,
+        "huge": 1500,
+        "gargantuan": 6000,
+        "titan": 24000 
+    },
+    "content": {
+        "small": 0.1,
+        "medium": 0.5,
+        "large": 1,
+        "huge": 2,
+        "gargantuan": 8,
+        "titan": 32
+    },
+    "size": {
+        "small": 4,
+        "medium": 20,
+        "large": 40,
+        "huge": 80,
+        "gargantuan": 320,
+        "titan": 1280
+    },
+    "rarity": "Common",
+    "weight": {
+        "small": 0.1,
+        "medium": 0.5,
+        "large": 1,
+        "huge": 2,
+        "gargantuan": 8,
+        "titan": 32
+    },
+    "description": "These are the tanks that can store the whale oil. Whale oil engines only work with the same size category tank. You can however store a tank two sizes larger on your ship for your fuel storage, provided you can carry the weight and fit the size."
+}
