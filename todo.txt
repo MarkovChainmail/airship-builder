@@ -9,5 +9,4 @@ Brig needs to have a free battering ram
 Fuel time calculations seem to be bugged on the Fluyt
 Howitzer & Mortar are Bow weapons
 Tanks should be removable (price 0 gp)
-Autopilot should fuck with the helmsman required feature
 Solar sails should auto-sail half your sail stations
