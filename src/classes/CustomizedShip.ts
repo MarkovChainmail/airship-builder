@@ -45,6 +45,10 @@ export class CustomizedShip {
         return ArmorFunctions.calculateSpeed(this.upgrades.armor, this.base.speed.engine)
     }
 
+    dailyspeed() {
+        return ArmorFunctions.calculateSpeed(this.upgrades.armor, this.base.speed.daily)
+    }
+
     sailstationspeed() {
         return ArmorFunctions.calculateSpeed(this.upgrades.armor, this.base.speed.unit)
     }

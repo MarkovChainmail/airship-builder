@@ -2,7 +2,6 @@ Weapons should not be shown with 0 slots or when blocked by kite shield
 Going overweight should prevent the installation of components OR give a warning (maybe the text displaying weight turns red)
 A cute little animated background with a flying airship animation
 Upgrades shop: buy cannonballs and other supplies. Auto-buy button for cannonballs and whale oil
-If you make a ship lighter, should it also impact travel speed?
 Light Hull Armor adds cargo space rather than adding a negative weight
 Dynamic reach range on the titan blade + ask Daan what the prices are of medium & large titan blades
 Brig needs to have a free battering ram
@@ -10,4 +9,3 @@ Fuel time calculations seem to be bugged on the Fluyt
 Display more weapon traits in statblock
 Tanks should be removable (price 0 gp)
 Solar sails should auto-sail half your sail stations
-The statblock changes from 11/1/2025

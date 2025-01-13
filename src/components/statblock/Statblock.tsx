@@ -113,7 +113,7 @@ export default function Statblock({ ship }: { ship: CustomizedShip }) {
 					<div className="actions">
 						<h3>Inventory</h3>
 					</div>
-					<TravelDisplay fuel={ship.fuel} dailyspeed={ship.base.speed.daily} passengers={ship.base.passengers} />
+					<TravelDisplay fuel={ship.fuel} dailyspeed={ship.dailyspeed()} passengers={ship.base.passengers} />
 				</div>
 				<hr className="orange-border bottom" />
 			</div>
