@@ -2,6 +2,7 @@
 - Round tonnage/engine operation time/fuel capacity to 2 decimals
 - Statblock displays magic core engine trait, automated pilot trait
 - Removed Harpoon-spear, slightly nerfed frigate AC, increased the cost of the Fluyt, added bow property to Howitzer/Mortar and prices to Titan Blades (12/1/2025 homebrew update)
+- Added Gargantuan size, and made the Man O' War Gargantuan
 
 # V0.0.1
 - Initial version of website

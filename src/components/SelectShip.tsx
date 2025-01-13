@@ -29,6 +29,9 @@ function getContent(header: string) {
     case 'Huge':
       data = data.filter(sh => sh.size.category == 'huge')
       break;
+    case 'Gargantuan':
+      data = data.filter(sh => sh.size.category == 'gargantuan')
+      break;
   }
   return data
 }
@@ -86,6 +89,10 @@ export default function SelectShip({ ship, shipsetter, objectsetter }: { ship: s
           ))}
           <ListSubheader>Huge</ListSubheader>
           {getContent('Huge').map((ship) => (
+            <MenuItem key={ship.name} value={ship.name}>{ship.name}</MenuItem>
+          ))}
+          <ListSubheader>Gargantuan</ListSubheader>
+          {getContent('Gargantuan').map((ship) => (
             <MenuItem key={ship.name} value={ship.name}>{ship.name}</MenuItem>
           ))}
         </Select>

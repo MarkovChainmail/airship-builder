@@ -166,6 +166,32 @@
             "type": "slashing"
         }
     },
+    "Titan Blade (Gargantuan)": {
+        "name": "Titan Blade (Gargantuan)",
+        "size": "gargantuan",
+        "ac": 18,
+        "hp": 400,
+        "immunities": [
+            "fire",
+            "poison",
+            "psychic"
+        ],
+        "description": "Titan blades are giant blades that can be set on the side of a ship and can reach out [half ship width] feet to slice through a nearby ship as you move alongside. The damage is depended on the size of your ship. The Titan Blade takes half the damage it has dealt. Titan blades can only be placed on the sides of the ship.",
+        "properties": [
+            "port",
+            "starboard",
+            "huge"
+        ],
+        "weight": 16,
+        "price": 3200,
+        "slots": 2,
+        "damage": {
+            "dice": "d20",
+            "diceamount": 2,
+            "average": 21,
+            "type": "slashing"
+        }
+    },
     "Swivel Cannon": {
         "name": "Swivel Cannon",
         "size": "small",

@@ -617,25 +617,25 @@
 
     "Man O' War": {
         "name": "Man O' War",
-        "description": "Also known as the “Floating Fortress”, this giant ship is the terror of the skies. It can lay siege to an enemy and protect anything within its range. The Man O’ War is unstoppable when combined with a couple monitors and frigates. It runs on a whale oil engine and has eight guargantuan tanks that can each run for 12 hours using eightton of fuel per tank. The Man O’ War also has sails and is often equipped with either Solar Sails or a magic core.",
+        "description": "Also known as the Flying Fortress”, this gargantuan ship is the terror of the skies. It can lay siege to an enemy and protect anything within its range. The Man O’ War is unstoppable when combined with a couple monitors and frigates. It runs on a whale oil engine and has eight guargantuan tanks that can each run for 12 hours using eightton of fuel per tank. The Man O’ War also has sails and is often equipped with either Solar Sails or a magic core.",
         "properties": ["helmsman", "sails", "engine", "cumbersome"],
-        "ac": 21,
+        "ac": 22,
         "hp": {
-            "max": 1280,
-            "dice": "d20",
-            "diceamount": 64
+            "max": 1440,
+            "dice": "d30",
+            "diceamount": 48
         },
-        "threshold": 30,
+        "threshold": 35,
         "crew": {
             "min": 25,
             "max": 150
         },
         "passengers": 196,
         "size": {
-            "category": "huge",
+            "category": "gargantuan",
             "area": {
                 "length": 300,
-                "width": 100
+                "width": 120
             }
         },
         "initiative": 5,
@@ -645,13 +645,13 @@
         },
         "weaponslots": [16, 24, 24, 8],
         "speed": {
-            "max": 180,
+            "max": 120,
             "unit": 10,
             "engine": 60,
-            "daily": 490
+            "daily": 320
         },
         "sailstations": 20,
-        "price": 120000,
+        "price": 160000,
         "fuel": {
             "tanks": {
                 "amount": 8,

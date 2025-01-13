@@ -8,6 +8,7 @@ export type Upgrade = {
         medium: number;
         large: number;
         huge: number;
+        gargantuan: number;
     }
     rarity: string;
     weight: {
@@ -15,6 +16,7 @@ export type Upgrade = {
         medium: number;
         large: number;
         huge: number;
+        gargantuan: number;
     }
     description: string;
     hp?: {
@@ -22,6 +24,7 @@ export type Upgrade = {
         medium: number;
         large: number;
         huge: number;
+        gargantuan: number;
     }
     ac?: number;
     immunities?: string[];

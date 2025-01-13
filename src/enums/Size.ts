@@ -2,7 +2,8 @@ export enum Size {
     small = 'small',
     medium = 'medium',
     large = 'large',
-    huge = 'huge'
+    huge = 'huge',
+    gargantuan = 'gargantuan'
 }
 
 export enum WhaleOilTankSize {
@@ -43,5 +44,5 @@ export function parseTankSize(size: string) {
 
 export function getOilSizesForShip(size: Size) {
     const index = Object.keys(Size).indexOf(size)
-    return Object.keys(WhaleOilTankSize).slice(0, index+3).map(s => parseTankSize(s))
+    return Object.keys(WhaleOilTankSize).slice(Math.max(0, index-2), index+3).map(s => parseTankSize(s))
 }
