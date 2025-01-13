@@ -89,7 +89,7 @@ export default function Statblock({ ship }: { ship: CustomizedShip }) {
 					<svg height="5" width="100%" className="tapered-rule">
 						<polyline points="0,0 400,2.5 0,5"></polyline>
 					</svg>
-					<TraitsDisplay traits={ship.base.properties} hasPaddlesUpgrade={ship.propulsion?.peddles} />
+					<TraitsDisplay traits={ship.base.properties} hasPaddlesUpgrade={ship.propulsion?.peddles} hasAutoPilot={ship.upgrades.autopilot} hasMagicCore={ship.propulsion?.core} />
 					<div className='property-block'>
 						<h4>Price.</h4> <p>{ship.price()} gp</p>
 					</div>

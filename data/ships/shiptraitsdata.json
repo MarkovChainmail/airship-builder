@@ -3,6 +3,10 @@
         "name": "Helmsman Required",
         "description": "A ship with the “Helmsman Required” property usually have some sort of rudder or steering system on board that works independently of the ship’s main locomotion method. These ships can only move in a straight line, unless a crew member takes the Helm Crew Action that round. (for more information, see Chapter 2)."
     },
+    "nohelmsman": {
+        "name": "Automated Pilot",
+        "description": "A ship with an Automated Pilot can follow a simple route, even without a helmsman. It can detect obstacles and sound an alarm when it is about to run into them, but cannot automatically avoid them."
+    },
     "agile": {
         "name": "Agile",
         "description": "Agile ships are particularly manoeuvrable and easy to pilot. They are able to turn on the spot, instead of needing to move while turning as most other ships do. Turning does not take up any extra movement speed."
