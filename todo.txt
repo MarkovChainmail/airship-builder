@@ -7,6 +7,7 @@ Light Hull Armor adds cargo space rather than adding a negative weight
 Dynamic reach range on the titan blade + ask Daan what the prices are of medium & large titan blades
 Brig needs to have a free battering ram
 Fuel time calculations seem to be bugged on the Fluyt
-Howitzer & Mortar are Bow weapons
+Display more weapon traits in statblock
 Tanks should be removable (price 0 gp)
 Solar sails should auto-sail half your sail stations
+The statblock changes from 11/1/2025

@@ -495,7 +495,7 @@
             "daily": 320
         },
         "sailstations": 20,
-        "price": 16000,
+        "price": 24000,
         "fuel": {
             "tanks": {
                 "amount": 8,
@@ -516,7 +516,7 @@
             "sails",
             "engine"
         ],
-        "ac": 20,
+        "ac": 18,
         "hp": {
             "max": 640,
             "dice": "d20",

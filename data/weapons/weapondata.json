@@ -105,7 +105,7 @@
             "medium"
         ],
         "weight": 2,
-        "price": 400,
+        "price": 300,
         "slots": 2,
         "damage": {
             "dice": "d12",
@@ -131,7 +131,7 @@
             "large"
         ],
         "weight": 4,
-        "price": 800,
+        "price": 700,
         "slots": 2,
         "damage": {
             "dice": "d6",
@@ -359,7 +359,8 @@
         ],
         "description": "A long range hard-hitting cannon specialized in destroying buildings.",
         "properties": [
-            "siege"
+            "siege",
+            "bow"
         ],
         "weight": 3.5,
         "price": 3300,
@@ -387,7 +388,8 @@
         ],
         "description": "The improved version of the mortar.",
         "properties": [
-            "siege"
+            "siege",
+            "bow"
         ],
         "weight": 5,
         "price": 5000,
@@ -435,33 +437,6 @@
             "type": "piercing"
         },
         "tohit": 6
-    },
-    "Harpoon-spear": {
-        "name": "Harpoon-spear",
-        "size": "huge",
-        "ac": 16,
-        "hp": 100,
-        "immunities": [
-            "poison",
-            "psychic"
-        ],
-        "description": "Aka Dragonator. The Harpoonspear is a giant spear that is extended through a pressured shot piercing a ship or creature.",
-        "properties": [
-            "noammo"
-        ],
-        "weight": 10,
-        "price": 1800,
-        "slots": 4,
-        "actions": 3,
-        "range": {
-            "normal": 20
-        },
-        "damage": {
-            "diceamount": 4,
-            "dice": "d12",
-            "average": 26,
-            "type": "piercing"
-        }
     },
     "Flaming Arrow": {
         "name": "Flaming Arrow",
