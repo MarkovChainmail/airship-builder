@@ -4,7 +4,7 @@ import { CustomizedShip } from '../../classes/CustomizedShip';
 import WeaponAttack from './WeaponAttack';
 import WeaponSides from './WeaponSides';
 import UpgradesDisplay from './UpgradesDisplay';
-import { capitalizeFirstLetter } from '../../functions/Utility';
+import { capitalizeFirstLetter, intOrTwoDecimals } from '../../functions/Utility';
 import TravelDisplay from './TravelDisplay';
 import TraitsDisplay from './TraitsDisplay';
 
@@ -97,7 +97,7 @@ export default function Statblock({ ship }: { ship: CustomizedShip }) {
 					<UpgradesDisplay upgrades={ship.upgrades} fuel={ship.fuel} propulsion={ship.propulsion} />
 					<div className="property-block">
 						<h4>Tonnage.</h4>
-						<p>{ship.weight()}/{ship.base.tonnage.total} total ({ship.base.tonnage.hold} cargo)</p>
+						<p>{intOrTwoDecimals(ship.weight())}/{ship.base.tonnage.total} total ({ship.base.tonnage.hold} cargo)</p>
 					</div>
 					<div className="property-block">
 						<h4>Crew.</h4>
