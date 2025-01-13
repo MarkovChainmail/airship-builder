@@ -107,7 +107,7 @@ export default function Statblock({ ship }: { ship: CustomizedShip }) {
 				<div className="section-right">
 					<div className="actions">
 						<h3>Actions</h3>
-						<WeaponAttack loadout={ship.loadout}></WeaponAttack>
+						<WeaponAttack loadout={ship.loadout} width={ship.base.size.area.width}></WeaponAttack>
 					</div>
 
 					<div className="actions">
