@@ -14,16 +14,25 @@ export class Loadout {
       throw new Error("Loadout needs exactly 4 parameters");
     }
     if (isBrig) {
-      this.innate = new WeaponContainer(2, WeaponDirection.bow);
+      this.innate = new WeaponContainer(2, WeaponDirection.bow, isBrig);
       this.innate.add("Battering Ram");
     }
-    this.bow = new BowContainer(parameters[0], WeaponDirection.bow);
-    this.port = new WeaponContainer(parameters[1], WeaponDirection.port);
+    this.bow = new BowContainer(parameters[0], WeaponDirection.bow, isBrig);
+    this.port = new WeaponContainer(
+      parameters[1],
+      WeaponDirection.port,
+      isBrig
+    );
     this.starboard = new WeaponContainer(
       parameters[2],
       WeaponDirection.starboard,
+      isBrig
     );
-    this.stern = new WeaponContainer(parameters[3], WeaponDirection.stern);
+    this.stern = new WeaponContainer(
+      parameters[3],
+      WeaponDirection.stern,
+      isBrig
+    );
   }
 
   getWeapons(): Weapon[] {
@@ -72,12 +81,18 @@ export class WeaponContainer {
   slotsused: number;
   weapons: { [id: string]: number };
   direction: WeaponDirection;
+  innateRam: boolean;
 
-  constructor(capacity: number, direction: WeaponDirection) {
+  constructor(
+    capacity: number,
+    direction: WeaponDirection,
+    innateRam: boolean
+  ) {
     this.capacity = capacity;
     this.slotsused = 0;
     this.weapons = {};
     this.direction = direction;
+    this.innateRam = innateRam;
   }
 
   // total amount of weapons mounted
@@ -159,9 +174,12 @@ export class WeaponContainer {
   }
 
   hasRam() {
-    return Object.keys(this.weapons)
-      .map((key) => getWeapon(key))
-      .some((w) => w.properties.includes("ram"));
+    return (
+      this.innateRam ||
+      Object.keys(this.weapons)
+        .map((key) => getWeapon(key))
+        .some((w) => w.properties.includes("ram"))
+    );
   }
 
   hasHead() {
@@ -172,8 +190,12 @@ export class WeaponContainer {
 }
 
 export class BowContainer extends WeaponContainer {
-  constructor(capacity: number, direction: WeaponDirection) {
-    super(capacity, direction);
+  constructor(
+    capacity: number,
+    direction: WeaponDirection,
+    innateRam: boolean
+  ) {
+    super(capacity, direction, innateRam);
   }
 
   installKiteShield() {
