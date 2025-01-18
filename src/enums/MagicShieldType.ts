@@ -1,5 +1,5 @@
 export enum MagicShieldType {
-    none = "None",
-    spell = "Spell",
-    arcane = "Arcane"
+  none = "None",
+  spell = "Spell",
+  arcane = "Arcane",
 }

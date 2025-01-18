@@ -1,0 +1,18 @@
+{
+        "name": "Battering Ram",
+        "size": "large",
+        "ac": 17,
+        "hp": 75,
+        "immunities": [
+            "poison",
+            "psychic"
+        ],
+        "description": "A prolonged piece of sturdy material usually attached low  to the bow of the ship to form a beak. The battering ram is designed to puncture the hulls of enemy ships during ram attacks.When you have the battering ram attached, your ship takes no damage after performing a successful ram attack, and only half of the targeted ships maximum hull points on an unsuccessful ram attack. In addition, as the attacking ship, you may choose to not be grappled following a ram attack. You may only have one ram equipped to your ship. The ram can only be equipped on the bow of the ship.",
+        "properties": [
+            "bow",
+            "ram"
+        ],
+        "weight": 0,
+        "price": 0,
+        "slots": 2
+    }

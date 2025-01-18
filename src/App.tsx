@@ -15,7 +15,7 @@ export default function App() {
   const [currentship, setCurrentship] = React.useState("Caraval");
   const [navbar, setNavbar] = React.useState("");
   const [customizedship, setCustomizedShip] = React.useState(
-    new CustomizedShip(getShip(currentship)),
+    new CustomizedShip(getShip(currentship))
   );
 
   function refresh() {

@@ -20,6 +20,18 @@ export default function WeaponSides({ ship }: { ship: CustomizedShip }) {
         <p>No weapon slots</p>
       ) : (
         <ul>
+          {ship.loadout.innate ? (
+            <li key="innate">
+              <p>Innate</p>
+              <ul>
+                {Object.entries(ship.loadout.innate.weapons).map((data) => (
+                  <li key={data[0]}>
+                    {data[0]} x{data[1]}
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ) : null}
           {ship.loadout.bow.isRedundant() ? null : (
             <li key="bow" className="shipside" onClick={setside("Bow")}>
               <p>

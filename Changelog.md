@@ -5,6 +5,7 @@
 - Added Gargantuan size, and made the Man O' War Gargantuan (12/1/2025 homebrew update)
 - Daily speed is now affected by armor type
 - Melee weapons have range, Titan blade has dynamic range
+- Brig has an innate battering ram
 
 # V0.0.1
 - Initial version of website

@@ -3,7 +3,6 @@ Going overweight should prevent the installation of components OR give a warning
 A cute little animated background with a flying airship animation
 Upgrades shop: buy cannonballs and other supplies. Auto-buy button for cannonballs and whale oil
 Light Hull Armor adds cargo space rather than adding a negative weight
-Brig needs to have a free battering ram
 Fuel time calculations seem to be bugged on the Fluyt
 Display more weapon traits in statblock
 Tanks should be removable (price 0 gp)

@@ -1,86 +1,111 @@
 import { Ship } from "../@types/Ship";
-import {Loadout} from "./Loadout"
-import * as ArmorFunctions from '../functions/ArmorFunctions';
+import { Loadout } from "./Loadout";
+import * as ArmorFunctions from "../functions/ArmorFunctions";
 import { Upgrades } from "./Upgrades";
 import { parseSize, Size } from "../enums/Size";
 import { Fuel } from "./Fuel";
 import { Propulsion } from "./Propulsion";
 
 export class CustomizedShip {
-    base: Ship;
-    loadout: Loadout
-    upgrades: Upgrades
-    fuel?: Fuel
-    propulsion?: Propulsion
+  base: Ship;
+  loadout: Loadout;
+  upgrades: Upgrades;
+  fuel?: Fuel;
+  propulsion?: Propulsion;
 
-    constructor(ship: Ship) {
-        this.base = ship
-        this.loadout = new Loadout(ship.weaponslots)
-        this.upgrades = new Upgrades(this.loadout.bow, ship.properties.includes('sails'))
-        
-        if (ship.fuel) {
-            this.fuel = new Fuel(ship.fuel)
-            this.propulsion = new Propulsion(ship.properties.includes('peddles'), false)
-        }
-        
-    }
+  constructor(ship: Ship) {
+    this.base = ship;
+    this.loadout = new Loadout(ship.weaponslots, ship.name == "Brig");
+    this.upgrades = new Upgrades(
+      this.loadout.bow,
+      ship.properties.includes("sails"),
+    );
 
-    AC() {
-        return ArmorFunctions.calculateAC(this.upgrades.armor, this.base.ac)
+    if (ship.fuel) {
+      this.fuel = new Fuel(ship.fuel);
+      this.propulsion = new Propulsion(
+        ship.properties.includes("peddles"),
+        false,
+      );
     }
+  }
 
-    HP() {
-        return ArmorFunctions.calculateHP(this.upgrades.armor, this.base.hp.max)
-    }
+  AC() {
+    return ArmorFunctions.calculateAC(this.upgrades.armor, this.base.ac);
+  }
 
-    hitdice() {
-        return ArmorFunctions.calculateHP(this.upgrades.armor, this.base.hp.diceamount) + this.base.hp.dice
-    }
+  HP() {
+    return ArmorFunctions.calculateHP(this.upgrades.armor, this.base.hp.max);
+  }
 
-    maxspeed() {
-        return ArmorFunctions.calculateSpeed(this.upgrades.armor, this.base.speed.max)
-    }
+  hitdice() {
+    return (
+      ArmorFunctions.calculateHP(this.upgrades.armor, this.base.hp.diceamount) +
+      this.base.hp.dice
+    );
+  }
 
-    enginespeed() {
-        return ArmorFunctions.calculateSpeed(this.upgrades.armor, this.base.speed.engine)
-    }
+  maxspeed() {
+    return ArmorFunctions.calculateSpeed(
+      this.upgrades.armor,
+      this.base.speed.max,
+    );
+  }
 
-    dailyspeed() {
-        return ArmorFunctions.calculateSpeed(this.upgrades.armor, this.base.speed.daily)
-    }
+  enginespeed() {
+    return ArmorFunctions.calculateSpeed(
+      this.upgrades.armor,
+      this.base.speed.engine,
+    );
+  }
 
-    sailstationspeed() {
-        return ArmorFunctions.calculateSpeed(this.upgrades.armor, this.base.speed.unit)
-    }
+  dailyspeed() {
+    return ArmorFunctions.calculateSpeed(
+      this.upgrades.armor,
+      this.base.speed.daily,
+    );
+  }
 
-    threshold() {
-        return ArmorFunctions.calculateThreshold(this.upgrades.armor, this.base.threshold, this.base.size.category)
-    }
+  sailstationspeed() {
+    return ArmorFunctions.calculateSpeed(
+      this.upgrades.armor,
+      this.base.speed.unit,
+    );
+  }
 
-    size(): Size {
-        // Return enum if JSON is well-written
-        return parseSize(this.base.size.category)
-    }
+  threshold() {
+    return ArmorFunctions.calculateThreshold(
+      this.upgrades.armor,
+      this.base.threshold,
+      this.base.size.category,
+    );
+  }
 
-    weight() {
-        var weight = this.loadout.weight() + this.upgrades.weight(this.size()) 
-        if (this.fuel) {
-            weight += this.fuel.weight()
-        }
-        if (this.propulsion) {
-            weight += this.propulsion.weight(this.size())
-        }
-        return weight
-    }
+  size(): Size {
+    // Return enum if JSON is well-written
+    return parseSize(this.base.size.category);
+  }
 
-    price() {
-        var price = this.base.price + this.loadout.price() + this.upgrades.price(this.size())
-        if (this.fuel) {
-            price += this.fuel.price()
-        }
-        if (this.propulsion) {
-            price += this.propulsion.price(this.size())
-        }
-        return price
+  weight() {
+    var weight = this.loadout.weight() + this.upgrades.weight(this.size());
+    if (this.fuel) {
+      weight += this.fuel.weight();
     }
+    if (this.propulsion) {
+      weight += this.propulsion.weight(this.size());
+    }
+    return weight;
+  }
+
+  price() {
+    var price =
+      this.base.price + this.loadout.price() + this.upgrades.price(this.size());
+    if (this.fuel) {
+      price += this.fuel.price();
+    }
+    if (this.propulsion) {
+      price += this.propulsion.price(this.size());
+    }
+    return price;
+  }
 }

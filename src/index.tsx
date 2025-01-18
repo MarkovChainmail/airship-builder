@@ -10,5 +10,5 @@ createRoot(document.querySelector("#root")!).render(
     <StyledEngineProvider injectFirst>
       <App />
     </StyledEngineProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 );
