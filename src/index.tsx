@@ -1,7 +1,7 @@
-import * as React from 'react';
+import * as React from "react";
 import { createRoot } from "react-dom/client";
 import "./styles.css";
-import { StyledEngineProvider } from '@mui/material/styles';
+import { StyledEngineProvider } from "@mui/material/styles";
 
 import App from "./App";
 
@@ -10,5 +10,5 @@ createRoot(document.querySelector("#root")!).render(
     <StyledEngineProvider injectFirst>
       <App />
     </StyledEngineProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
