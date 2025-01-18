@@ -21,17 +21,17 @@ export class Loadout {
     this.port = new WeaponContainer(
       parameters[1],
       WeaponDirection.port,
-      isBrig
+      isBrig,
     );
     this.starboard = new WeaponContainer(
       parameters[2],
       WeaponDirection.starboard,
-      isBrig
+      isBrig,
     );
     this.stern = new WeaponContainer(
       parameters[3],
       WeaponDirection.stern,
-      isBrig
+      isBrig,
     );
   }
 
@@ -86,7 +86,7 @@ export class WeaponContainer {
   constructor(
     capacity: number,
     direction: WeaponDirection,
-    innateRam: boolean
+    innateRam: boolean,
   ) {
     this.capacity = capacity;
     this.slotsused = 0;
@@ -193,7 +193,7 @@ export class BowContainer extends WeaponContainer {
   constructor(
     capacity: number,
     direction: WeaponDirection,
-    innateRam: boolean
+    innateRam: boolean,
   ) {
     super(capacity, direction, innateRam);
   }

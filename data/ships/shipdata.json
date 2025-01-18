@@ -1,666 +1,571 @@
 {
-    "Sailboat": {
-        "name": "Sailboat",
-        "description": "This is a smaller boat, mostly used for leisure on windy days. It is entirely silent and can be used to sail on the endless winds of the sky. More expensive models come equipped with a solar sail",
-        "properties": [
-            "helmsman",
-            "sails",
-            "civilian"
-        ],
-        "ac": 16,
-        "hp": {
-            "max": 24,
-            "dice": "d8",
-            "diceamount": 3
-        },
-        "threshold": 5,
-        "crew": {
-            "min": 1,
-            "max": 2
-        },
-        "passengers": 5,
-        "size": {
-            "category": "small",
-            "area": {
-                "length": 30,
-                "width": 5
-            }
-        },
-        "initiative": 10,
-        "tonnage": {
-            "total": 0.5,
-            "hold": 0.5
-        },
-        "weaponslots": [
-            0,
-            0,
-            0,
-            0
-        ],
-        "speed": {
-            "max": 40,
-            "unit": 20,
-            "engine": 0,
-            "daily": 110
-        },
-        "sailstations": 2,
-        "price": 600
+  "Sailboat": {
+    "name": "Sailboat",
+    "description": "This is a smaller boat, mostly used for leisure on windy days. It is entirely silent and can be used to sail on the endless winds of the sky. More expensive models come equipped with a solar sail",
+    "properties": ["helmsman", "sails", "civilian"],
+    "ac": 16,
+    "hp": {
+      "max": 24,
+      "dice": "d8",
+      "diceamount": 3
     },
-    "Air Scooter": {
-        "name": "Air Scooter",
-        "description": "This loud boat is designed as a flying motorcycle, very sleek and very fast. It runs on a small whale oil engine that is located in-between the legs of the driver and has a tank to run for 30 minutesusing 0.1ton of fuel.",
-        "properties": [
-            "agile",
-            "engine",
-            "helmsman"
-        ],
-        "ac": 20,
-        "hp": {
-            "max": 32,
-            "dice": "d8",
-            "diceamount": 4
-        },
-        "threshold": 0,
-        "crew": {
-            "min": 1,
-            "max": 1
-        },
-        "passengers": 2,
-        "size": {
-            "category": "small",
-            "area": {
-                "length": 10,
-                "width": 5
-            }
-        },
-        "initiative": 12,
-        "tonnage": {
-            "total": 0,
-            "hold": 0
-        },
-        "weaponslots": [
-            0,
-            0,
-            0,
-            0
-        ],
-        "speed": {
-            "max": 240,
-            "unit": 120,
-            "engine": 120,
-            "daily": 650
-        },
-        "sailstations": 1,
-        "price": 750,
-        "fuel": {
-            "tanks": {
-                "amount": 1,
-                "size": "small"
-            },
-            "runtime": {
-                "amount": 30,
-                "unit": "minutes"
-            }
-        }
+    "threshold": 5,
+    "crew": {
+      "min": 1,
+      "max": 2
     },
-    "Gunboat": {
-        "name": "Gunboat",
-        "description": "The simple gunboat is often used as a landing vesselor small swarming option in combat. It generally comes equipped with a swivelcanon or machinegun on each side.It runs on a small whale oil enginethat has a tank that can run for one hourusing 0.1 ton of fuelbut the gunboat also has sails.",
-        "properties": [
-            "helmsman",
-            "sails",
-            "engine"
-        ],
-        "ac": 18,
-        "hp": {
-            "max": 48,
-            "dice": "d8",
-            "diceamount": 6
-        },
-        "threshold": 10,
-        "crew": {
-            "min": 2,
-            "max": 8
-        },
-        "passengers": 10,
-        "size": {
-            "category": "small",
-            "area": {
-                "length": 30,
-                "width": 10
-            }
-        },
-        "initiative": 10,
-        "tonnage": {
-            "total": 4,
-            "hold": 1
-        },
-        "weaponslots": [
-            0,
-            1,
-            1,
-            0
-        ],
-        "speed": {
-            "max": 180,
-            "unit": 30,
-            "engine": 60,
-            "daily": 490
-        },
-        "sailstations": 4,
-        "price": 2400,
-        "fuel": {
-            "tanks": {
-                "amount": 1,
-                "size": "small"
-            },
-            "runtime": {
-                "amount": 1,
-                "unit": "hours"
-            }
-        }
+    "passengers": 5,
+    "size": {
+      "category": "small",
+      "area": {
+        "length": 30,
+        "width": 5
+      }
     },
-    "Lifeboat": {
-        "name": "Lifeboat",
-        "description": "The sturdy lifeboat is not designed for battle, if anything it is designed for the opposite. Able to be carried on larger ships, the closed lifeboat is simply a reliable ship that allows evacuees of a ship to escape a sinking vessel. It runs on a whale oil engine and has a tank for two days using 0.1 ton of fuel..",
-        "properties": [
-            "helmsman",
-            "sails",
-            "engine",
-            "paddling",
-            "civilian"
-        ],
-        "ac": 14,
-        "hp": {
-            "max": 32,
-            "dice": "d8",
-            "diceamount": 4
-        },
-        "threshold": 10,
-        "crew": {
-            "min": 2,
-            "max": 4
-        },
-        "passengers": 12,
-        "size": {
-            "category": "small",
-            "area": {
-                "length": 30,
-                "width": 15
-            }
-        },
-        "initiative": 6,
-        "tonnage": {
-            "total": 2,
-            "hold": 2
-        },
-        "weaponslots": [
-            0,
-            0,
-            0,
-            0
-        ],
-        "speed": {
-            "max": 30,
-            "unit": 10,
-            "engine": 10,
-            "daily": 80
-        },
-        "sailstations": 3,
-        "price": 600,
-        "fuel": {
-            "tanks": {
-                "amount": 1,
-                "size": "small"
-            },
-            "runtime": {
-                "amount": 2,
-                "unit": "days"
-            }
-        }
+    "initiative": 10,
+    "tonnage": {
+      "total": 0.5,
+      "hold": 0.5
     },
-    "Caraval": {
-        "name": "Caraval",
-        "description": "The caraval is a classic small cargo ship that is used by a lot of traders to roam the skies. Caravals with one or three additional tanksare most often used as Whalers ships.It runs on a whale oil engine with two tanks that can each run for 18hours using half a ton of fuel per tank. The caraval also has sails.",
-        "properties": [
-            "helmsman",
-            "sails",
-            "engine"
-        ],
-        "ac": 14,
-        "hp": {
-            "max": 200,
-            "dice": "d10",
-            "diceamount": 20
-        },
-        "threshold": 15,
-        "crew": {
-            "min": 5,
-            "max": 20
-        },
-        "passengers": 24,
-        "size": {
-            "category": "medium",
-            "area": {
-                "length": 80,
-                "width": 20
-            }
-        },
-        "initiative": 6,
-        "tonnage": {
-            "total": 80,
-            "hold": 60
-        },
-        "weaponslots": [
-            0,
-            3,
-            3,
-            0
-        ],
-        "speed": {
-            "max": 120,
-            "unit": 15,
-            "engine": 40,
-            "daily": 320
-        },
-        "sailstations": 8,
-        "price": 7000,
-        "fuel": {
-            "tanks": {
-                "amount": 2,
-                "size": "medium"
-            },
-            "runtime": {
-                "amount": 18,
-                "unit": "hours"
-            }
-        }
+    "weaponslots": [0, 0, 0, 0],
+    "speed": {
+      "max": 40,
+      "unit": 20,
+      "engine": 0,
+      "daily": 110
     },
-    "Galley": {
-        "name": "Galley",
-        "description": "This reliable gunboat is the smallest military gunboat of its kind. Strong and sturdy forits size it can surprise you by swarming your surroundings and filling you with cannon ball sized holes. It runs on a whale oil engine and has two tanks that can each run for 24hours using half a ton of fuel per tank. The galley also has sails.",
-        "properties": [
-            "helmsman",
-            "sails",
-            "engine"
-        ],
-        "ac": 14,
-        "hp": {
-            "max": 250,
-            "dice": "d10",
-            "diceamount": 25
-        },
-        "threshold": 15,
-        "crew": {
-            "min": 6,
-            "max": 24
-        },
-        "passengers": 32,
-        "size": {
-            "category": "medium",
-            "area": {
-                "length": 80,
-                "width": 25
-            }
-        },
-        "initiative": 7,
-        "tonnage": {
-            "total": 75,
-            "hold": 25
-        },
-        "weaponslots": [
-            1,
-            6,
-            6,
-            0
-        ],
-        "speed": {
-            "max": 160,
-            "unit": 15,
-            "engine": 40,
-            "daily": 440
-        },
-        "sailstations": 8,
-        "price": 9000,
-        "fuel": {
-            "tanks": {
-                "amount": 2,
-                "size": "medium"
-            },
-            "runtime": {
-                "amount": 24,
-                "unit": "hours"
-            }
-        }
+    "sailstations": 2,
+    "price": 600
+  },
+  "Air Scooter": {
+    "name": "Air Scooter",
+    "description": "This loud boat is designed as a flying motorcycle, very sleek and very fast. It runs on a small whale oil engine that is located in-between the legs of the driver and has a tank to run for 30 minutesusing 0.1ton of fuel.",
+    "properties": ["agile", "engine", "helmsman"],
+    "ac": 20,
+    "hp": {
+      "max": 32,
+      "dice": "d8",
+      "diceamount": 4
     },
-    "Galleon": {
-        "name": "Galleon",
-        "description": "This first large ship is the big brother of the galley. The galleon is the central unit for the military. It is reliable, strong, surprisingly sturdy and has more firepower than anything in its size category or smaller. It runs on a whale oil engine and has four tanks that can each run for 24 hours using a ton of fuel per tank. The galleon also has sails.",
-        "properties": [
-            "helmsman",
-            "sails",
-            "engine"
-        ],
-        "ac": 15,
-        "hp": {
-            "max": 468,
-            "dice": "d12",
-            "diceamount": 39
-        },
-        "threshold": 20,
-        "crew": {
-            "min": 10,
-            "max": 40
-        },
-        "passengers": 56,
-        "size": {
-            "category": "large",
-            "area": {
-                "length": 100,
-                "width": 30
-            }
-        },
-        "initiative": 7,
-        "tonnage": {
-            "total": 150,
-            "hold": 60
-        },
-        "weaponslots": [
-            2,
-            10,
-            10,
-            0
-        ],
-        "speed": {
-            "max": 200,
-            "unit": 15,
-            "engine": 50,
-            "daily": 550
-        },
-        "sailstations": 12,
-        "price": 21000,
-        "fuel": {
-            "tanks": {
-                "amount": 4,
-                "size": "large"
-            },
-            "runtime": {
-                "amount": 24,
-                "unit": "hours"
-            }
-        }
+    "threshold": 0,
+    "crew": {
+      "min": 1,
+      "max": 1
     },
-    "Brig": {
-        "name": "Brig",
-        "description": "The heavy brig is a strong and sturdy battering ship. Equipped with a free battering ramit is designed to catch a ship of guard and hit it hard. The brig is also sometimes used by merchants due to its large cargo size and low minimum required crew.It runs on a whale oil engine and has four tanks that can each run 16 hours using a ton of fuel per tank. The Brig also has a sail and paddles.",
-        "properties": [
-            "helmsman",
-            "sails",
-            "engine",
-            "paddling",
-            "cumbersome"
-        ],
-        "ac": 16,
-        "hp": {
-            "max": 504,
-            "dice": "d12",
-            "diceamount": 42
-        },
-        "threshold": 20,
-        "crew": {
-            "min": 12,
-            "max": 48
-        },
-        "passengers": 64,
-        "size": {
-            "category": "large",
-            "area": {
-                "length": 120,
-                "width": 40
-            }
-        },
-        "initiative": 5,
-        "tonnage": {
-            "total": 240,
-            "hold": 120
-        },
-        "weaponslots": [
-            6,
-            8,
-            8,
-            2
-        ],
-        "speed": {
-            "max": 160,
-            "unit": 10,
-            "engine": 40,
-            "daily": 440
-        },
-        "sailstations": 16,
-        "price": 24000,
-        "fuel": {
-            "tanks": {
-                "amount": 4,
-                "size": "large"
-            },
-            "runtime": {
-                "amount": 16,
-                "unit": "hours"
-            }
-        }
+    "passengers": 2,
+    "size": {
+      "category": "small",
+      "area": {
+        "length": 10,
+        "width": 5
+      }
     },
-    "Fluyt": {
-        "name": "Fluyt",
-        "description": "The fluyt isthe largest available civilian ship and as a merchant ship isdesigned to hold large cargoes or passenger numbers whilstbeingstaffed by as few people as possible. While it will succumb quickly if caught in an engagement, the fluyt is still appreciably swift, and can escape most small treats. It runs on a whale oil engine and has eight large tanks that can each run for 6 hours using two tons of fuel per tank.The fluyt also has sails.",
-        "properties": [
-            "helmsman",
-            "sails",
-            "engine",
-            "cumbersome"
-        ],
-        "ac": 12,
-        "hp": {
-            "max": 360,
-            "dice": "d12",
-            "diceamount": 18
-        },
-        "threshold": 15,
-        "crew": {
-            "min": 10,
-            "max": 30
-        },
-        "passengers": 30,
-        "size": {
-            "category": "huge",
-            "area": {
-                "length": 160,
-                "width": 50
-            }
-        },
-        "initiative": 3,
-        "tonnage": {
-            "total": 800,
-            "hold": 600
-        },
-        "weaponslots": [
-            0,
-            4,
-            4,
-            2
-        ],
-        "speed": {
-            "max": 120,
-            "unit": 5,
-            "engine": 30,
-            "daily": 320
-        },
-        "sailstations": 20,
-        "price": 24000,
-        "fuel": {
-            "tanks": {
-                "amount": 8,
-                "size": "huge"
-            },
-            "runtime": {
-                "amount": 6,
-                "unit": "hours"
-            }
-        }
+    "initiative": 12,
+    "tonnage": {
+      "total": 0,
+      "hold": 0
     },
-
-    "Frigate": {
-        "name": "Frigate",
-        "description": "Also known as a “Ship-of-the-line”, the frigate is the pride of any nation’s navy. Heavily gunned and heavily armoured, the frigate sails into battle and makes quick work of the enemy. This fast and agile ship functions as the cavalry of a fleet. It runs on a whale oil engine and has eight large tanks that can each run for 12 hours using two ton of fuel per tank. The frigate also has sails",
-        "properties": [
-            "helmsman",
-            "sails",
-            "engine"
-        ],
-        "ac": 18,
-        "hp": {
-            "max": 640,
-            "dice": "d20",
-            "diceamount": 32
-        },
-        "threshold": 25,
-        "crew": {
-            "min": 15,
-            "max": 90
-        },
-        "passengers": 120,
-        "size": {
-            "category": "huge",
-            "area": {
-                "length": 160,
-                "width": 45
-            }
-        },
-        "initiative": 5,
-        "tonnage": {
-            "total": 800,
-            "hold": 300
-        },
-        "weaponslots": [
-            8,
-            16,
-            16,
-            4
-        ],
-        "speed": {
-            "max": 200,
-            "unit": 20,
-            "engine": 60,
-            "daily": 550
-        },
-        "sailstations": 12,
-        "price": 64000,
-        "fuel": {
-            "tanks": {
-                "amount": 8,
-                "size": "huge"
-            },
-            "runtime": {
-                "amount": 12,
-                "unit": "hours"
-            }
-        }
+    "weaponslots": [0, 0, 0, 0],
+    "speed": {
+      "max": 240,
+      "unit": 120,
+      "engine": 120,
+      "daily": 650
     },
-
-    "Monitor": {
-        "name": "Monitor",
-        "description": "This heavy cannon of the navy is the doom to anyone coming within its range. Designed as a siege-like ship it often is equipped with mortars to shoot enemy strongholds or large enemy ships. It runs on a whale oil engine and has eight large tanks that can each run for 6 hours using two tons of fuel per tank. The monitor also has sails.",
-        "properties": ["helmsman", "sails", "engine", "cumbersome"],
-        "ac": 20,
-        "hp": {
-            "max": 720,
-            "dice": "d20",
-            "diceamount": 36
-        },
-        "threshold": 25,
-        "crew": {
-            "min": 20,
-            "max": 120
-        },
-        "passengers": 156,
-        "size": {
-            "category": "huge",
-            "area": {
-                "length": 180,
-                "width": 60
-            }
-        },
-        "initiative": 4,
-        "tonnage": {
-            "total": 1600,
-            "hold": 800
-        },
-        "weaponslots": [16, 12, 12, 8],
-        "speed": {
-            "max": 180,
-            "unit": 15,
-            "engine": 60,
-            "daily": 490
-        },
-        "sailstations": 15,
-        "price": 80000,
-        "fuel": {
-            "tanks": {
-                "amount": 8,
-                "size": "huge"
-            },
-            "runtime": {
-                "amount": 6,
-                "unit": "hours"
-            }
-        }
-    },
-
-    "Man O' War": {
-        "name": "Man O' War",
-        "description": "Also known as the Flying Fortress”, this gargantuan ship is the terror of the skies. It can lay siege to an enemy and protect anything within its range. The Man O’ War is unstoppable when combined with a couple monitors and frigates. It runs on a whale oil engine and has eight guargantuan tanks that can each run for 12 hours using eightton of fuel per tank. The Man O’ War also has sails and is often equipped with either Solar Sails or a magic core.",
-        "properties": ["helmsman", "sails", "engine", "cumbersome"],
-        "ac": 22,
-        "hp": {
-            "max": 1440,
-            "dice": "d30",
-            "diceamount": 48
-        },
-        "threshold": 35,
-        "crew": {
-            "min": 25,
-            "max": 150
-        },
-        "passengers": 196,
-        "size": {
-            "category": "gargantuan",
-            "area": {
-                "length": 300,
-                "width": 120
-            }
-        },
-        "initiative": 5,
-        "tonnage": {
-            "total": 2500,
-            "hold": 1500
-        },
-        "weaponslots": [16, 24, 24, 8],
-        "speed": {
-            "max": 120,
-            "unit": 10,
-            "engine": 60,
-            "daily": 320
-        },
-        "sailstations": 20,
-        "price": 160000,
-        "fuel": {
-            "tanks": {
-                "amount": 8,
-                "size": "gargantuan"
-            },
-            "runtime": {
-                "amount": 12,
-                "unit": "hours"
-            }
-        }
+    "sailstations": 1,
+    "price": 750,
+    "fuel": {
+      "tanks": {
+        "amount": 1,
+        "size": "small"
+      },
+      "runtime": {
+        "amount": 30,
+        "unit": "minutes"
+      }
     }
+  },
+  "Gunboat": {
+    "name": "Gunboat",
+    "description": "The simple gunboat is often used as a landing vesselor small swarming option in combat. It generally comes equipped with a swivelcanon or machinegun on each side.It runs on a small whale oil enginethat has a tank that can run for one hourusing 0.1 ton of fuelbut the gunboat also has sails.",
+    "properties": ["helmsman", "sails", "engine"],
+    "ac": 18,
+    "hp": {
+      "max": 48,
+      "dice": "d8",
+      "diceamount": 6
+    },
+    "threshold": 10,
+    "crew": {
+      "min": 2,
+      "max": 8
+    },
+    "passengers": 10,
+    "size": {
+      "category": "small",
+      "area": {
+        "length": 30,
+        "width": 10
+      }
+    },
+    "initiative": 10,
+    "tonnage": {
+      "total": 4,
+      "hold": 1
+    },
+    "weaponslots": [0, 1, 1, 0],
+    "speed": {
+      "max": 180,
+      "unit": 30,
+      "engine": 60,
+      "daily": 490
+    },
+    "sailstations": 4,
+    "price": 2400,
+    "fuel": {
+      "tanks": {
+        "amount": 1,
+        "size": "small"
+      },
+      "runtime": {
+        "amount": 1,
+        "unit": "hours"
+      }
+    }
+  },
+  "Lifeboat": {
+    "name": "Lifeboat",
+    "description": "The sturdy lifeboat is not designed for battle, if anything it is designed for the opposite. Able to be carried on larger ships, the closed lifeboat is simply a reliable ship that allows evacuees of a ship to escape a sinking vessel. It runs on a whale oil engine and has a tank for two days using 0.1 ton of fuel..",
+    "properties": ["helmsman", "sails", "engine", "paddling", "civilian"],
+    "ac": 14,
+    "hp": {
+      "max": 32,
+      "dice": "d8",
+      "diceamount": 4
+    },
+    "threshold": 10,
+    "crew": {
+      "min": 2,
+      "max": 4
+    },
+    "passengers": 12,
+    "size": {
+      "category": "small",
+      "area": {
+        "length": 30,
+        "width": 15
+      }
+    },
+    "initiative": 6,
+    "tonnage": {
+      "total": 2,
+      "hold": 2
+    },
+    "weaponslots": [0, 0, 0, 0],
+    "speed": {
+      "max": 30,
+      "unit": 10,
+      "engine": 10,
+      "daily": 80
+    },
+    "sailstations": 3,
+    "price": 600,
+    "fuel": {
+      "tanks": {
+        "amount": 1,
+        "size": "small"
+      },
+      "runtime": {
+        "amount": 2,
+        "unit": "days"
+      }
+    }
+  },
+  "Caraval": {
+    "name": "Caraval",
+    "description": "The caraval is a classic small cargo ship that is used by a lot of traders to roam the skies. Caravals with one or three additional tanksare most often used as Whalers ships.It runs on a whale oil engine with two tanks that can each run for 18hours using half a ton of fuel per tank. The caraval also has sails.",
+    "properties": ["helmsman", "sails", "engine"],
+    "ac": 14,
+    "hp": {
+      "max": 200,
+      "dice": "d10",
+      "diceamount": 20
+    },
+    "threshold": 15,
+    "crew": {
+      "min": 5,
+      "max": 20
+    },
+    "passengers": 24,
+    "size": {
+      "category": "medium",
+      "area": {
+        "length": 80,
+        "width": 20
+      }
+    },
+    "initiative": 6,
+    "tonnage": {
+      "total": 80,
+      "hold": 60
+    },
+    "weaponslots": [0, 3, 3, 0],
+    "speed": {
+      "max": 120,
+      "unit": 15,
+      "engine": 40,
+      "daily": 320
+    },
+    "sailstations": 8,
+    "price": 7000,
+    "fuel": {
+      "tanks": {
+        "amount": 2,
+        "size": "medium"
+      },
+      "runtime": {
+        "amount": 18,
+        "unit": "hours"
+      }
+    }
+  },
+  "Galley": {
+    "name": "Galley",
+    "description": "This reliable gunboat is the smallest military gunboat of its kind. Strong and sturdy forits size it can surprise you by swarming your surroundings and filling you with cannon ball sized holes. It runs on a whale oil engine and has two tanks that can each run for 24hours using half a ton of fuel per tank. The galley also has sails.",
+    "properties": ["helmsman", "sails", "engine"],
+    "ac": 14,
+    "hp": {
+      "max": 250,
+      "dice": "d10",
+      "diceamount": 25
+    },
+    "threshold": 15,
+    "crew": {
+      "min": 6,
+      "max": 24
+    },
+    "passengers": 32,
+    "size": {
+      "category": "medium",
+      "area": {
+        "length": 80,
+        "width": 25
+      }
+    },
+    "initiative": 7,
+    "tonnage": {
+      "total": 75,
+      "hold": 25
+    },
+    "weaponslots": [1, 6, 6, 0],
+    "speed": {
+      "max": 160,
+      "unit": 15,
+      "engine": 40,
+      "daily": 440
+    },
+    "sailstations": 8,
+    "price": 9000,
+    "fuel": {
+      "tanks": {
+        "amount": 2,
+        "size": "medium"
+      },
+      "runtime": {
+        "amount": 24,
+        "unit": "hours"
+      }
+    }
+  },
+  "Galleon": {
+    "name": "Galleon",
+    "description": "This first large ship is the big brother of the galley. The galleon is the central unit for the military. It is reliable, strong, surprisingly sturdy and has more firepower than anything in its size category or smaller. It runs on a whale oil engine and has four tanks that can each run for 24 hours using a ton of fuel per tank. The galleon also has sails.",
+    "properties": ["helmsman", "sails", "engine"],
+    "ac": 15,
+    "hp": {
+      "max": 468,
+      "dice": "d12",
+      "diceamount": 39
+    },
+    "threshold": 20,
+    "crew": {
+      "min": 10,
+      "max": 40
+    },
+    "passengers": 56,
+    "size": {
+      "category": "large",
+      "area": {
+        "length": 100,
+        "width": 30
+      }
+    },
+    "initiative": 7,
+    "tonnage": {
+      "total": 150,
+      "hold": 60
+    },
+    "weaponslots": [2, 10, 10, 0],
+    "speed": {
+      "max": 200,
+      "unit": 15,
+      "engine": 50,
+      "daily": 550
+    },
+    "sailstations": 12,
+    "price": 21000,
+    "fuel": {
+      "tanks": {
+        "amount": 4,
+        "size": "large"
+      },
+      "runtime": {
+        "amount": 24,
+        "unit": "hours"
+      }
+    }
+  },
+  "Brig": {
+    "name": "Brig",
+    "description": "The heavy brig is a strong and sturdy battering ship. Equipped with a free battering ramit is designed to catch a ship of guard and hit it hard. The brig is also sometimes used by merchants due to its large cargo size and low minimum required crew.It runs on a whale oil engine and has four tanks that can each run 16 hours using a ton of fuel per tank. The Brig also has a sail and paddles.",
+    "properties": ["helmsman", "sails", "engine", "paddling", "cumbersome"],
+    "ac": 16,
+    "hp": {
+      "max": 504,
+      "dice": "d12",
+      "diceamount": 42
+    },
+    "threshold": 20,
+    "crew": {
+      "min": 12,
+      "max": 48
+    },
+    "passengers": 64,
+    "size": {
+      "category": "large",
+      "area": {
+        "length": 120,
+        "width": 40
+      }
+    },
+    "initiative": 5,
+    "tonnage": {
+      "total": 240,
+      "hold": 120
+    },
+    "weaponslots": [6, 8, 8, 2],
+    "speed": {
+      "max": 160,
+      "unit": 10,
+      "engine": 40,
+      "daily": 440
+    },
+    "sailstations": 16,
+    "price": 24000,
+    "fuel": {
+      "tanks": {
+        "amount": 4,
+        "size": "large"
+      },
+      "runtime": {
+        "amount": 16,
+        "unit": "hours"
+      }
+    }
+  },
+  "Fluyt": {
+    "name": "Fluyt",
+    "description": "The fluyt isthe largest available civilian ship and as a merchant ship isdesigned to hold large cargoes or passenger numbers whilstbeingstaffed by as few people as possible. While it will succumb quickly if caught in an engagement, the fluyt is still appreciably swift, and can escape most small treats. It runs on a whale oil engine and has eight large tanks that can each run for 6 hours using two tons of fuel per tank.The fluyt also has sails.",
+    "properties": ["helmsman", "sails", "engine", "cumbersome"],
+    "ac": 12,
+    "hp": {
+      "max": 360,
+      "dice": "d12",
+      "diceamount": 18
+    },
+    "threshold": 15,
+    "crew": {
+      "min": 10,
+      "max": 30
+    },
+    "passengers": 30,
+    "size": {
+      "category": "huge",
+      "area": {
+        "length": 160,
+        "width": 50
+      }
+    },
+    "initiative": 3,
+    "tonnage": {
+      "total": 800,
+      "hold": 600
+    },
+    "weaponslots": [0, 4, 4, 2],
+    "speed": {
+      "max": 120,
+      "unit": 5,
+      "engine": 30,
+      "daily": 320
+    },
+    "sailstations": 20,
+    "price": 24000,
+    "fuel": {
+      "tanks": {
+        "amount": 8,
+        "size": "huge"
+      },
+      "runtime": {
+        "amount": 6,
+        "unit": "hours"
+      }
+    }
+  },
+
+  "Frigate": {
+    "name": "Frigate",
+    "description": "Also known as a “Ship-of-the-line”, the frigate is the pride of any nation’s navy. Heavily gunned and heavily armoured, the frigate sails into battle and makes quick work of the enemy. This fast and agile ship functions as the cavalry of a fleet. It runs on a whale oil engine and has eight large tanks that can each run for 12 hours using two ton of fuel per tank. The frigate also has sails",
+    "properties": ["helmsman", "sails", "engine"],
+    "ac": 18,
+    "hp": {
+      "max": 640,
+      "dice": "d20",
+      "diceamount": 32
+    },
+    "threshold": 25,
+    "crew": {
+      "min": 15,
+      "max": 90
+    },
+    "passengers": 120,
+    "size": {
+      "category": "huge",
+      "area": {
+        "length": 160,
+        "width": 45
+      }
+    },
+    "initiative": 5,
+    "tonnage": {
+      "total": 800,
+      "hold": 300
+    },
+    "weaponslots": [8, 16, 16, 4],
+    "speed": {
+      "max": 200,
+      "unit": 20,
+      "engine": 60,
+      "daily": 550
+    },
+    "sailstations": 12,
+    "price": 64000,
+    "fuel": {
+      "tanks": {
+        "amount": 8,
+        "size": "huge"
+      },
+      "runtime": {
+        "amount": 12,
+        "unit": "hours"
+      }
+    }
+  },
+
+  "Monitor": {
+    "name": "Monitor",
+    "description": "This heavy cannon of the navy is the doom to anyone coming within its range. Designed as a siege-like ship it often is equipped with mortars to shoot enemy strongholds or large enemy ships. It runs on a whale oil engine and has eight large tanks that can each run for 6 hours using two tons of fuel per tank. The monitor also has sails.",
+    "properties": ["helmsman", "sails", "engine", "cumbersome"],
+    "ac": 20,
+    "hp": {
+      "max": 720,
+      "dice": "d20",
+      "diceamount": 36
+    },
+    "threshold": 25,
+    "crew": {
+      "min": 20,
+      "max": 120
+    },
+    "passengers": 156,
+    "size": {
+      "category": "huge",
+      "area": {
+        "length": 180,
+        "width": 60
+      }
+    },
+    "initiative": 4,
+    "tonnage": {
+      "total": 1600,
+      "hold": 800
+    },
+    "weaponslots": [16, 12, 12, 8],
+    "speed": {
+      "max": 180,
+      "unit": 15,
+      "engine": 60,
+      "daily": 490
+    },
+    "sailstations": 15,
+    "price": 80000,
+    "fuel": {
+      "tanks": {
+        "amount": 8,
+        "size": "huge"
+      },
+      "runtime": {
+        "amount": 6,
+        "unit": "hours"
+      }
+    }
+  },
+
+  "Man O' War": {
+    "name": "Man O' War",
+    "description": "Also known as the Flying Fortress”, this gargantuan ship is the terror of the skies. It can lay siege to an enemy and protect anything within its range. The Man O’ War is unstoppable when combined with a couple monitors and frigates. It runs on a whale oil engine and has eight guargantuan tanks that can each run for 12 hours using eightton of fuel per tank. The Man O’ War also has sails and is often equipped with either Solar Sails or a magic core.",
+    "properties": ["helmsman", "sails", "engine", "cumbersome"],
+    "ac": 22,
+    "hp": {
+      "max": 1440,
+      "dice": "d30",
+      "diceamount": 48
+    },
+    "threshold": 35,
+    "crew": {
+      "min": 25,
+      "max": 150
+    },
+    "passengers": 196,
+    "size": {
+      "category": "gargantuan",
+      "area": {
+        "length": 300,
+        "width": 120
+      }
+    },
+    "initiative": 5,
+    "tonnage": {
+      "total": 2500,
+      "hold": 1500
+    },
+    "weaponslots": [16, 24, 24, 8],
+    "speed": {
+      "max": 120,
+      "unit": 10,
+      "engine": 60,
+      "daily": 320
+    },
+    "sailstations": 20,
+    "price": 160000,
+    "fuel": {
+      "tanks": {
+        "amount": 8,
+        "size": "gargantuan"
+      },
+      "runtime": {
+        "amount": 12,
+        "unit": "hours"
+      }
+    }
+  }
 }
