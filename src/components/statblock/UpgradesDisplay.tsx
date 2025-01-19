@@ -17,16 +17,14 @@ function PropulsionList({ propulsion }: { propulsion: Propulsion }) {
 
 export default function UpgradesDisplay({
   upgrades,
-  fuel,
   propulsion,
 }: {
   upgrades: Upgrades;
-  fuel: Fuel | undefined;
   propulsion: Propulsion | undefined;
 }) {
-  const { state, setter } = useContext(NavContext) as NavbarStateType;
+  const { setter } = useContext(NavContext) as NavbarStateType;
 
-  const onClick = (event: React.MouseEvent<HTMLElement>) => {
+  const onClick = () => {
     setter("Upgrades");
   };
 

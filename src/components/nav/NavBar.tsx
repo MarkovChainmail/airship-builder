@@ -10,9 +10,9 @@ export default function NavBar({
   refresh,
 }: {
   ship: CustomizedShip;
-  refresh: Function;
+  refresh: () => void;
 }) {
-  const { state, setter } = useContext(NavContext) as NavbarStateType;
+  const { state } = useContext(NavContext) as NavbarStateType;
 
   if (state == "") return <></>;
   else if (state == "Port")

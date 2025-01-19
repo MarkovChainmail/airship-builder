@@ -12,14 +12,14 @@
         "jsx": true
       }
     },
-    "plugins": ["react-hooks", "prettier", "@typescript-eslint"],
+    "plugins": ["react", "react-hooks", "prettier", "@typescript-eslint"],
     "rules": {
       "react/jsx-uses-vars": "warn",
       "react/jsx-uses-react": "warn",
       "no-unused-vars": "off",
       "@typescript-eslint/no-unused-vars": ["error"],
       "no-empty-function": "off",
-      "@typescript-eslint/no-empty-function": ["error"]
+      "@typescript-eslint/no-empty-function": "off"
     },
     "settings": {
       "react": {

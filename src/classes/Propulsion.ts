@@ -13,7 +13,7 @@ export class Propulsion {
   }
 
   toString() {
-    var res = "";
+    let res = "";
 
     if (this.core) {
       res += "Magic Core Engine";
@@ -37,16 +37,16 @@ export class Propulsion {
   }
 
   getUpgrades() {
-    var list = [];
+    const list = [];
     if (this.peddles) {
       list.push(getUpgrade("Peddles System"));
     }
     if (this.core) {
       list.push(getUpgrade("Magic Core"));
     }
-    for (const _ in [...Array(this.extraengines).keys()]) {
-      list.push(getUpgrade("Whale Oil Engine"));
-    }
+    [...Array(this.extraengines).keys()].forEach(() =>
+      list.push(getUpgrade("Whale Oil Engine"))
+    )
     return list;
   }
 

@@ -10,7 +10,7 @@ function OilTankButtons({
 }: {
   fuel: Fuel;
   size: WhaleOilTankSize;
-  refresh: Function;
+  refresh: () => void;
 }) {
   const minus = () => {
     fuel.removeTank(size);
@@ -38,7 +38,7 @@ function OilTankPicker({
   size,
 }: {
   fuel: Fuel;
-  refresh: Function;
+  refresh: () => void;
   size: Size;
 }) {
   return (

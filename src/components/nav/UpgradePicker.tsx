@@ -14,7 +14,7 @@ export default function UpgradePicker({
   refresh,
 }: {
   ship: CustomizedShip;
-  refresh: Function;
+  refresh: () => void;
 }) {
   return (
     <nav className="nav">

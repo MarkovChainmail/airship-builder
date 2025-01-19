@@ -1,4 +1,3 @@
-import { keyBy } from "lodash";
 import { getOilTank } from "../@types/OilTank";
 import { parseTankSize, WhaleOilTankSize } from "../enums/Size";
 

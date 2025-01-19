@@ -122,7 +122,6 @@ export default function Statblock({ ship }: { ship: CustomizedShip }) {
           <WeaponSides ship={ship} />
           <UpgradesDisplay
             upgrades={ship.upgrades}
-            fuel={ship.fuel}
             propulsion={ship.propulsion}
           />
           <div className="property-block">

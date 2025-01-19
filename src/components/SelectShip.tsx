@@ -12,7 +12,7 @@ import ListSubheader from "@mui/material/ListSubheader";
 import { NavContext } from "../App";
 
 function getContent(header: string) {
-  var data = Object.values(shipdata);
+  let data = Object.values(shipdata);
   switch (header) {
     // case 'Civilian':
     //   data = data.filter(sh => sh.properties.includes('civilian'))
@@ -42,10 +42,10 @@ export default function SelectShip({
   objectsetter,
 }: {
   ship: string;
-  shipsetter: Function;
-  objectsetter: Function;
+  shipsetter: (ship: string) => void;
+  objectsetter: (ship: CustomizedShip) => void;
 }) {
-  const { state, setter } = React.useContext(NavContext) as NavbarStateType;
+  const { setter } = React.useContext(NavContext) as NavbarStateType;
 
   const handleChange = (event: SelectChangeEvent) => {
     shipsetter(event.target.value as string);

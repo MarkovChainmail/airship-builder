@@ -9,7 +9,7 @@ function WeaponSelectButtons({
 }: {
   weaponcontainer: WeaponContainer;
   w: Weapon;
-  refresh: Function;
+  refresh: () => void;
 }) {
   const minus = (name: string) => {
     return function () {

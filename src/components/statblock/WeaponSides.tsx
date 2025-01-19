@@ -4,10 +4,10 @@ import { NavContext } from "../../App";
 import { NavbarStateType } from "../../@types/NavbarState";
 
 export default function WeaponSides({ ship }: { ship: CustomizedShip }) {
-  const { state, setter } = useContext(NavContext) as NavbarStateType;
+  const { setter } = useContext(NavContext) as NavbarStateType;
 
   const setside = (name: string) => {
-    return function (event: React.MouseEvent<HTMLElement>) {
+    return function () {
       setter(name);
     };
   };

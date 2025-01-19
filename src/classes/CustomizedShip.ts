@@ -87,7 +87,7 @@ export class CustomizedShip {
   }
 
   weight() {
-    var weight = this.loadout.weight() + this.upgrades.weight(this.size());
+    let weight = this.loadout.weight() + this.upgrades.weight(this.size());
     if (this.fuel) {
       weight += this.fuel.weight();
     }
@@ -98,7 +98,7 @@ export class CustomizedShip {
   }
 
   price() {
-    var price =
+    let price =
       this.base.price + this.loadout.price() + this.upgrades.price(this.size());
     if (this.fuel) {
       price += this.fuel.price();

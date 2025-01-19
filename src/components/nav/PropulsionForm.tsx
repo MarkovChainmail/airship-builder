@@ -12,7 +12,7 @@ function PropulsionForm({
 }: {
   propulsion: Propulsion;
   size: Size;
-  refresh: Function;
+  refresh: () => void;
   innatePaddles: boolean;
 }) {
   const handlePeddles = () => {

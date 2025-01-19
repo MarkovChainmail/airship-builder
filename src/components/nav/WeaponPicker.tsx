@@ -15,9 +15,9 @@ export default function WeaponPicker({
 }: {
   size: Size;
   weaponcontainer: WeaponContainer;
-  refresh: Function;
+  refresh: () => void;
 }) {
-  const { state, setter } = React.useContext(NavContext) as NavbarStateType;
+  const { state } = React.useContext(NavContext) as NavbarStateType;
 
   return (
     <nav className="nav">

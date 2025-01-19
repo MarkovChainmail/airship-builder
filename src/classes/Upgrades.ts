@@ -88,7 +88,7 @@ export class Upgrades {
   }
 
   getUpgrades() {
-    var list: Upgrade[] = [];
+    const list: Upgrade[] = [];
     switch (this.armor) {
       case ArmorType.light:
         list.push(getUpgrade("Light Hull Armor"));
