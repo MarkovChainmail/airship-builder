@@ -1,10 +1,12 @@
 acorn
 actor
 adder
+agent
 agony
 air
 alien
 ally
+amber
 amigo
 angel
 ankle
@@ -349,6 +351,7 @@ mimic
 miser
 missus
 mister
+mold
 monk
 moon
 mother
@@ -356,7 +359,6 @@ muse
 mutt
 navy
 nerd
-nest
 newt
 night
 noble
@@ -454,7 +456,6 @@ snail
 snake
 song
 spell
-spree
 squid
 staff
 star

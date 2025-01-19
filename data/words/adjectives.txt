@@ -236,7 +236,7 @@ lively
 livid
 lofty
 lone
-long
+long-lost
 loopy
 loose
 lost
@@ -301,7 +301,6 @@ notable
 nubby
 nutty
 oaken
-obese
 odd
 oily
 old
