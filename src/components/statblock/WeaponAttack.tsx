@@ -76,7 +76,7 @@ export default function WeaponAttack({
   return (
     <div>
       {loadout.getWeapons().map((w: Weapon) => (
-        <div className="property-block">
+        <div className="property-block" key={w.name}>
           <h4>{w.name}.</h4>
           <FormatAttack weapon={w} width={width} />
         </div>

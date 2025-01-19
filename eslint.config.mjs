@@ -19,10 +19,10 @@ const compat = new FlatCompat({
 });
 
 export default [
-    ...compat.extends("eslint:recommended", "prettier", "plugin:@typescript-eslint/recommended"),
+    ...compat.extends("eslint:recommended", "prettier", "plugin:@typescript-eslint/recommended", "plugin:react/recommended"),
     {
         plugins: {
-            //"react": fixupPluginRules(react),
+            "react": react,
             "react-hooks": fixupPluginRules(reactHooks),
             "prettier": fixupPluginRules(prettier),
             "@typescript-eslint": typescriptEslint
@@ -51,8 +51,8 @@ export default [
         },
 
         rules: {
-            //"react/jsx-uses-vars": "warn",
-            //"react/jsx-uses-react": "warn",
+            "react/jsx-uses-vars": "warn",
+            "react/jsx-uses-react": "warn",
             "no-unused-vars": "off",
             "@typescript-eslint/no-unused-vars": "off",
             "no-empty-function": "off",

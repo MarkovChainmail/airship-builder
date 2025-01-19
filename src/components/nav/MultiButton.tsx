@@ -19,6 +19,7 @@ function MultiButton({
     <ul>
       {fields.map((f, i) => (
         <NavTooltip
+          key={f}
           object={tooltips[i]}
           wrapped={
             <li key={f}>

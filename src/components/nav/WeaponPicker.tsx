@@ -27,7 +27,7 @@ export default function WeaponPicker({
           .map((w) => getWeapon(w.name))
           .filter((w) => weaponcontainer.fitsContainer(w, size))
           .map((w) => (
-            <li>
+            <li key={w.name}>
               <p>
                 <NavTooltip object={w} wrapped={<b>{w.name}</b>} />, <br></br>{" "}
                 {w.range ? (

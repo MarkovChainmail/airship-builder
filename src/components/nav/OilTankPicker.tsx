@@ -44,7 +44,7 @@ function OilTankPicker({
   return (
     <ul className="nav-vertical-list">
       {getOilSizesForShip(size).map((ws) => (
-        <li>
+        <li key={ws}>
           <div>
             <OilTankButtons fuel={fuel} size={ws} refresh={refresh} />{" "}
             {capitalizeFirstLetter(ws)}
