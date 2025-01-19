@@ -6,6 +6,7 @@
 - Daily speed is now affected by armor type
 - Melee weapons have range, Titan blade has dynamic range
 - Brig has an innate battering ram
+- Oil tanks that a ship starts with are now removable
 
 # V0.0.1
 - Initial version of website

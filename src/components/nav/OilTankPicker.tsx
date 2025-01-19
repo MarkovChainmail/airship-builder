@@ -24,7 +24,7 @@ function OilTankButtons({
 
   return (
     <div>
-      <button onClick={minus} disabled={!fuel.hasAdditional(size)}>
+      <button onClick={minus} disabled={!fuel.hasTotal(size)}>
         -
       </button>{" "}
       {fuel.hasTotal(size)} <button onClick={plus}>+</button>
