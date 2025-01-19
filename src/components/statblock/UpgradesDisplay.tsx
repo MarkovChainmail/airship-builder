@@ -3,7 +3,6 @@ import { NavContext } from "../../App";
 import { NavbarStateType } from "../../@types/NavbarState";
 import { Upgrades } from "../../classes/Upgrades";
 import { MagicShieldType } from "../../enums/MagicShieldType";
-import { Fuel } from "../../classes/Fuel";
 import { Propulsion } from "../../classes/Propulsion";
 
 function PropulsionList({ propulsion }: { propulsion: Propulsion }) {
