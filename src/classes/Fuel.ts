@@ -13,15 +13,12 @@ export class Fuel {
   runtimeUnit: string;
   additionalTanks: Tanks;
 
-  constructor(fuel: {
-    tanks: { amount: number; size: string };
-    runtime: { amount: number; unit: string };
-  }) {
-    this.baseTanksAmt = fuel.tanks.amount;
-    this.baseTanksSize = parseTankSize(fuel.tanks.size);
+  private constructor() {
+    this.baseTanksAmt = 0;
+    this.baseTanksSize = WhaleOilTankSize.small;
     this.baseTanksRemoved = 0;
-    this.runtimeAmt = fuel.runtime.amount;
-    this.runtimeUnit = fuel.runtime.unit;
+    this.runtimeAmt = 0;
+    this.runtimeUnit = "";
     this.additionalTanks = {
       small: 0,
       medium: 0,
@@ -30,6 +27,45 @@ export class Fuel {
       gargantuan: 0,
       titan: 0,
     };
+  }
+
+  public static fromScratch(fuel: {
+    tanks: { amount: number; size: string };
+    runtime: { amount: number; unit: string };
+  }): Fuel {
+    const obj = new Fuel();
+    obj.baseTanksAmt = fuel.tanks.amount;
+    obj.baseTanksSize = parseTankSize(fuel.tanks.size);
+    obj.baseTanksRemoved = 0;
+    obj.runtimeAmt = fuel.runtime.amount;
+    obj.runtimeUnit = fuel.runtime.unit;
+    obj.additionalTanks = {
+      small: 0,
+      medium: 0,
+      large: 0,
+      huge: 0,
+      gargantuan: 0,
+      titan: 0,
+    };
+    return obj;
+  }
+
+  public static fromJSON(json: any) {
+    const obj = new Fuel();
+    obj.baseTanksAmt = json.baseTanksAmt;
+    obj.baseTanksSize = parseTankSize(json.baseTanksSize);
+    obj.baseTanksRemoved = json.baseTanksRemoved;
+    obj.runtimeAmt = json.runtimeAmt;
+    obj.runtimeUnit = json.runtimeUnit;
+    obj.additionalTanks = {
+      small: json.additionalTanks.small,
+      medium: json.additionalTanks.medium,
+      large: json.additionalTanks.large,
+      huge: json.additionalTanks.huge,
+      gargantuan: json.additionalTanks.gargantuan,
+      titan: json.additionalTanks.titan,
+    };
+    return obj;
   }
 
   usagePerTimeUnit() {

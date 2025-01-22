@@ -6,10 +6,26 @@ export class Propulsion {
   core: boolean;
   extraengines: number;
 
-  constructor(peddles: boolean, core: boolean) {
-    this.peddles = peddles;
-    this.core = core;
+  private constructor() {
+    this.peddles = false;
+    this.core = false;
     this.extraengines = 0;
+  }
+
+  public static fromScratch(peddles: boolean, core: boolean): Propulsion {
+    const obj = new Propulsion();
+    obj.peddles = peddles;
+    obj.core = core;
+    obj.extraengines = 0;
+    return obj;
+  }
+
+  public static fromJSON(json: any): Propulsion {
+    const obj = new Propulsion();
+    obj.peddles = json.peddles;
+    obj.core = json.core;
+    obj.extraengines = json.extraengines;
+    return obj;
   }
 
   toString() {

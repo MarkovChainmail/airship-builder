@@ -1,4 +1,4 @@
-import { Ship } from "../@types/Ship";
+import { getShip, Ship } from "../@types/Ship";
 import { Loadout } from "./Loadout";
 import * as ArmorFunctions from "../functions/ArmorFunctions";
 import { Upgrades } from "./Upgrades";
@@ -13,21 +13,43 @@ export class CustomizedShip {
   fuel?: Fuel;
   propulsion?: Propulsion;
 
-  constructor(ship: Ship) {
-    this.base = ship;
-    this.loadout = new Loadout(ship.weaponslots, ship.name == "Brig");
-    this.upgrades = new Upgrades(
-      this.loadout.bow,
+  private constructor() {
+    this.base = {} as Ship;
+    this.loadout = {} as Loadout;
+    this.upgrades = {} as Upgrades;
+  }
+
+  public static fromScratch(ship: Ship): CustomizedShip {
+    const obj = new CustomizedShip();
+    obj.base = ship;
+    obj.loadout = Loadout.fromScratch(ship.weaponslots, ship.name == "Brig");
+    obj.upgrades = Upgrades.fromScratch(
+      obj.loadout.bow,
       ship.properties.includes("sails"),
     );
 
     if (ship.fuel) {
-      this.fuel = new Fuel(ship.fuel);
-      this.propulsion = new Propulsion(
+      obj.fuel = Fuel.fromScratch(ship.fuel);
+      obj.propulsion = Propulsion.fromScratch(
         ship.properties.includes("peddles"),
         false,
       );
     }
+    return obj;
+  }
+
+  public static fromJSON(json: any): CustomizedShip {
+    const obj = CustomizedShip.fromScratch(getShip(json.base.name));
+
+    obj.loadout = Loadout.fromJSON(json.loadout);
+    obj.upgrades = Upgrades.fromJSON(obj.loadout.bow, json.upgrades);
+
+    if (json.base.fuel) {
+      obj.fuel = Fuel.fromJSON(json.fuel);
+      obj.propulsion = Propulsion.fromJSON(json.propulsion);
+    }
+
+    return obj
   }
 
   AC() {

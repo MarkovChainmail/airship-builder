@@ -9,30 +9,49 @@ export class Loadout {
   starboard: WeaponContainer;
   stern: WeaponContainer;
 
-  constructor(parameters: number[], isBrig: boolean) {
+  private constructor() {
+    this.bow = {} as BowContainer;
+    this.port = {} as WeaponContainer;
+    this.starboard = {} as WeaponContainer;
+    this.stern = {} as WeaponContainer;
+  }
+
+  public static fromScratch(parameters: number[], isBrig: boolean): Loadout {
+    const obj = new Loadout();
+
     if (parameters.length != 4) {
       throw new Error("Loadout needs exactly 4 parameters");
     }
     if (isBrig) {
-      this.innate = new WeaponContainer(2, WeaponDirection.bow, isBrig);
-      this.innate.add("Battering Ram");
+      obj.innate = WeaponContainer.fromScratch(2, WeaponDirection.bow, isBrig);
+      obj.innate.add("Battering Ram");
     }
-    this.bow = new BowContainer(parameters[0], WeaponDirection.bow, isBrig);
-    this.port = new WeaponContainer(
-      parameters[1],
-      WeaponDirection.port,
-      isBrig,
-    );
-    this.starboard = new WeaponContainer(
+    obj.bow = BowContainer.fromScratch(parameters[0], WeaponDirection.bow, isBrig);
+    obj.port = WeaponContainer.fromScratch(parameters[1], WeaponDirection.port, isBrig);
+    obj.starboard = WeaponContainer.fromScratch(
       parameters[2],
       WeaponDirection.starboard,
-      isBrig,
+      isBrig
     );
-    this.stern = new WeaponContainer(
+    obj.stern = WeaponContainer.fromScratch(
       parameters[3],
       WeaponDirection.stern,
-      isBrig,
+      isBrig
     );
+
+    return obj;
+  }
+
+  public static fromJSON(json: any): Loadout {
+    const obj = new Loadout();
+    obj.innate = json.innate
+      ? WeaponContainer.fromJSON(json.innate)
+      : undefined;
+    obj.bow = BowContainer.fromJSON(json.bow);
+    obj.port = WeaponContainer.fromJSON(json.port);
+    obj.starboard = WeaponContainer.fromJSON(json.starboard);
+    obj.stern = WeaponContainer.fromJSON(json.stern);
+    return obj;
   }
 
   getWeapons(): Weapon[] {
@@ -83,16 +102,36 @@ export class WeaponContainer {
   direction: WeaponDirection;
   innateRam: boolean;
 
-  constructor(
-    capacity: number,
-    direction: WeaponDirection,
-    innateRam: boolean,
-  ) {
-    this.capacity = capacity;
+  protected constructor() {
+    this.capacity = 0;
     this.slotsused = 0;
     this.weapons = {};
-    this.direction = direction;
-    this.innateRam = innateRam;
+    this.direction = WeaponDirection.bow;
+    this.innateRam = false;
+  }
+
+  public static fromScratch(
+    capacity: number,
+    direction: WeaponDirection,
+    innateRam: boolean
+  ): WeaponContainer {
+    const obj = new WeaponContainer();
+    obj.capacity = capacity;
+    obj.slotsused = 0;
+    obj.weapons = {};
+    obj.direction = direction;
+    obj.innateRam = innateRam;
+    return obj;
+  }
+
+  public static fromJSON(json: any): WeaponContainer {
+    const obj = new WeaponContainer();
+    obj.capacity = json.capacity;
+    obj.slotsused = json.slotsused;
+    obj.weapons = json.weapons;
+    obj.direction = json.direction;
+    obj.innateRam = json.innateRam;
+    return obj;
   }
 
   // total amount of weapons mounted
@@ -190,12 +229,28 @@ export class WeaponContainer {
 }
 
 export class BowContainer extends WeaponContainer {
-  constructor(
-    capacity: number,
-    direction: WeaponDirection,
-    innateRam: boolean,
-  ) {
-    super(capacity, direction, innateRam);
+  private constructor() {
+    super();
+  }
+
+  public static fromScratch(capacity: number, direction: WeaponDirection, innateRam: boolean): BowContainer {
+    const obj = new BowContainer();
+    obj.capacity = capacity;
+    obj.slotsused = 0;
+    obj.weapons = {};
+    obj.direction = direction;
+    obj.innateRam = innateRam;
+    return obj;
+  }
+
+  public static fromJSON(json: any): BowContainer {
+    const obj = new BowContainer();
+    obj.capacity = json.capacity;
+    obj.slotsused = json.slotsused;
+    obj.weapons = json.weapons;
+    obj.direction = json.direction;
+    obj.innateRam = json.innateRam;
+    return obj;
   }
 
   installKiteShield() {

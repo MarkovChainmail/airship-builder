@@ -15,14 +15,37 @@ export class Upgrades {
 
   bow: BowContainer;
 
-  constructor(bow: BowContainer, hasSails: boolean) {
+  private constructor() {
     this.armor = ArmorType.medium;
     this.kiteshield = false;
-    this.bow = bow;
-    if (hasSails) this.sails = SailsType.canvas;
+    this.bow = {} as BowContainer;
     this.magicshield = MagicShieldType.none;
     this.teleportationcircle = false;
     this.autopilot = false;
+  }
+
+  public static fromScratch(bow: BowContainer, hasSails: boolean): Upgrades {
+    const obj = new Upgrades();
+    obj.armor = ArmorType.medium;
+    obj.kiteshield = false;
+    obj.bow = bow;
+    if (hasSails) obj.sails = SailsType.canvas;
+    obj.magicshield = MagicShieldType.none;
+    obj.teleportationcircle = false;
+    obj.autopilot = false;
+    return obj;
+  }
+
+  public static fromJSON(bow: BowContainer, json: any): Upgrades {
+    const obj = new Upgrades();
+    obj.armor = json.armor;
+    obj.kiteshield = json.kiteshield;
+    obj.bow = bow;
+    obj.sails = json.sails;
+    obj.magicshield = json.magicshield;
+    obj.teleportationcircle = json.teleportationcircle;
+    obj.autopilot = json.autopilot;
+    return obj;  
   }
 
   setArmorLight() {
