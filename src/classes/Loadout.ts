@@ -315,8 +315,11 @@ export class SideContainer extends WeaponContainer {
     return obj;
   }
 
-  linkToContainer(container: SideContainer) {
+  linkToContainer(container: SideContainer, propagate: boolean = true) {
     this.linkedContainer = container;
+    if (propagate) {
+      container.linkToContainer(this, false);
+    }
   }
 
   link(propagate: boolean = true) {
