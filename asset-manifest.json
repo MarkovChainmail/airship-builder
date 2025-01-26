@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/airship-builder/static/css/main.5db3ef65.css",
-    "main.js": "/airship-builder/static/js/main.6828c8ec.js",
+    "main.js": "/airship-builder/static/js/main.03a448aa.js",
     "index.html": "/airship-builder/index.html",
     "main.5db3ef65.css.map": "/airship-builder/static/css/main.5db3ef65.css.map",
-    "main.6828c8ec.js.map": "/airship-builder/static/js/main.6828c8ec.js.map"
+    "main.03a448aa.js.map": "/airship-builder/static/js/main.03a448aa.js.map"
   },
   "entrypoints": [
     "static/css/main.5db3ef65.css",
-    "static/js/main.6828c8ec.js"
+    "static/js/main.03a448aa.js"
   ]
 }
