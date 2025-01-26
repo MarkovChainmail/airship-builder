@@ -144,7 +144,9 @@ export class Fuel {
 
   hasTotal(size: WhaleOilTankSize) {
     if (this.baseTanksSize == size) {
-      return this.baseTanksAmt - this.baseTanksRemoved + this.additionalTanks[size];
+      return (
+        this.baseTanksAmt - this.baseTanksRemoved + this.additionalTanks[size]
+      );
     }
     return this.additionalTanks[size];
   }

@@ -1,3 +1,6 @@
+# V0.0.4
+- Port & Starboard weapon containers are now linked (they can be unlinked with a button press)
+
 # V0.0.3
 - Saving/loading from json files added
 - Ability to name airships added (name is reflected in tab name and JSON filename)

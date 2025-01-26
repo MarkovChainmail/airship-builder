@@ -51,9 +51,9 @@ export default function WeaponSides({ ship }: { ship: CustomizedShip }) {
             </li>
           )}
           <li key="port" className="clickable" onClick={setside("Port")}>
-            <p>Port ({ship.loadout.port.slotsused}/
-              {ship.loadout.port.capacity})
-            </p> 
+            <p>
+              Port ({ship.loadout.port.slotsused}/{ship.loadout.port.capacity})
+            </p>
             <LinkDisplay isLinked={ship.loadout.port.isLinked} />
             <ul>
               {Object.entries(ship.loadout.port.weapons).map((data) => (

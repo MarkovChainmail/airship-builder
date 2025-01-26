@@ -49,7 +49,9 @@ export default function SelectShip({
 
   const handleChange = (event: SelectChangeEvent) => {
     shipsetter(event.target.value as string);
-    const newship = CustomizedShip.fromScratch(getShip(event.target.value) as Ship);
+    const newship = CustomizedShip.fromScratch(
+      getShip(event.target.value) as Ship,
+    );
     objectsetter(newship);
     setter("");
   };

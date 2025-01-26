@@ -1,6 +1,6 @@
 {
   "name": "react.dev",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "/src/index.js",
   "homepage": "https://markovchainmail.github.io/airship-builder",
   "scripts": {
@@ -10,7 +10,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "format": "prettier --write \"src/**/*.ts*\" \"data/**/*.json\"",
+    "format": "prettier --write \"src/**/*.ts*\" \"src/**/*.json\"",
     "lint": "eslint src"
   },
   "dependencies": {

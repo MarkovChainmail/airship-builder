@@ -2,7 +2,13 @@ import * as React from "react";
 import { CustomizedShip } from "../../classes/CustomizedShip";
 import { useEffect } from "react";
 
-function NameDisplayInput({ ship, refresh }: { ship: CustomizedShip, refresh: () => void }) {
+function NameDisplayInput({
+  ship,
+  refresh,
+}: {
+  ship: CustomizedShip;
+  refresh: () => void;
+}) {
   const [inputtingName, setInputtingName] = React.useState(false);
 
   function submitName(e: React.SyntheticEvent<HTMLInputElement>) {
@@ -10,7 +16,7 @@ function NameDisplayInput({ ship, refresh }: { ship: CustomizedShip, refresh: ()
     const inputElement = e.target as HTMLInputElement;
     if (inputElement.value != "") {
       ship.name = inputElement.value;
-      refresh()
+      refresh();
     }
   }
 

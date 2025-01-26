@@ -61,8 +61,8 @@ export class Propulsion {
       list.push(getUpgrade("Magic Core"));
     }
     [...Array(this.extraengines).keys()].forEach(() =>
-      list.push(getUpgrade("Whale Oil Engine"))
-    )
+      list.push(getUpgrade("Whale Oil Engine")),
+    );
     return list;
   }
 

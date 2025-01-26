@@ -44,7 +44,7 @@ export class CustomizedShip {
   public static fromJSON(json: any): CustomizedShip {
     const obj = CustomizedShip.fromScratch(getShip(json.base.name));
 
-    if(json.name) {
+    if (json.name) {
       obj.name = json.name;
     }
 
@@ -56,7 +56,7 @@ export class CustomizedShip {
       obj.propulsion = Propulsion.fromJSON(json.propulsion);
     }
 
-    return obj
+    return obj;
   }
 
   AC() {

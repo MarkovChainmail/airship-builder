@@ -22,15 +22,32 @@ function reverseDirection(direction: WeaponDirection) {
 function LinkButton({
   isLinked,
   container,
-  refresh
+  refresh,
 }: {
   isLinked: boolean;
   container: SideContainer;
   refresh: () => void;
 }) {
   return (
-    <button onClick={isLinked ? () => {container.unlink(); refresh()} : () => {container.link(); refresh()}}>
-      {isLinked ? "Unlink" : "Overwrite " + reverseDirection(container.direction) + " and link" } <LinkDisplay isLinked={isLinked} />
+    <button
+      onClick={
+        isLinked
+          ? () => {
+              container.unlink();
+              refresh();
+            }
+          : () => {
+              container.link();
+              refresh();
+            }
+      }
+    >
+      {isLinked
+        ? "Unlink"
+        : "Overwrite " +
+          reverseDirection(container.direction) +
+          " and link"}{" "}
+      <LinkDisplay isLinked={isLinked} />
     </button>
   );
 }
@@ -49,10 +66,13 @@ export default function WeaponPicker({
   return (
     <nav className="nav">
       <h1>{state} Weapons</h1>
-      {weaponcontainer instanceof SideContainer ? <LinkButton
-        isLinked={weaponcontainer.isLinked} container={weaponcontainer} refresh={refresh} />
-         : null
-      }
+      {weaponcontainer instanceof SideContainer ? (
+        <LinkButton
+          isLinked={weaponcontainer.isLinked}
+          container={weaponcontainer}
+          refresh={refresh}
+        />
+      ) : null}
       <ul>
         {Object.values(weapons)
           .map((w) => getWeapon(w.name))

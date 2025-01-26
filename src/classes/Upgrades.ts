@@ -45,7 +45,7 @@ export class Upgrades {
     obj.magicshield = json.magicshield;
     obj.teleportationcircle = json.teleportationcircle;
     obj.autopilot = json.autopilot;
-    return obj;  
+    return obj;
   }
 
   setArmorLight() {

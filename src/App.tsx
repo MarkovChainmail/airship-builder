@@ -1,5 +1,5 @@
 import * as React from "react";
-import { saveAs } from 'file-saver';
+import { saveAs } from "file-saver";
 import cloneDeep from "lodash.clonedeep";
 
 import SelectShip from "./components/SelectShip";
@@ -16,7 +16,7 @@ export default function App() {
   const [currentship, setCurrentship] = React.useState<string>("Caraval");
   const [navbar, setNavbar] = React.useState<string>("");
   const [customizedship, setCustomizedShip] = React.useState<CustomizedShip>(
-    CustomizedShip.fromScratch(getShip(currentship))
+    CustomizedShip.fromScratch(getShip(currentship)),
   );
 
   function refresh(): void {
@@ -25,11 +25,13 @@ export default function App() {
 
   function saveCustomizedShipAsJson(): void {
     const json = JSON.stringify(customizedship, undefined, 2);
-    const blob = new Blob([json], { type: 'application/json' });
-    saveAs(blob, customizedship.name + '.json');
+    const blob = new Blob([json], { type: "application/json" });
+    saveAs(blob, customizedship.name + ".json");
   }
 
-  function loadCustomizedShipFromJson(event: React.ChangeEvent<HTMLInputElement>): void {
+  function loadCustomizedShipFromJson(
+    event: React.ChangeEvent<HTMLInputElement>,
+  ): void {
     const file = event.target.files?.[0];
     if (file) {
       const reader = new FileReader();
@@ -47,19 +49,20 @@ export default function App() {
       <NavContext.Provider
         value={{ state: navbar, setter: setNavbar } as NavbarStateType}
       >
-      <header className="header">
-        <p>Airship Builder</p>
+        <header className="header">
+          <p>Airship Builder</p>
 
-        <button onClick={saveCustomizedShipAsJson}>Save as JSON</button>
-        <input type="file" accept="application/json" onChange={loadCustomizedShipFromJson} />
+          <button onClick={saveCustomizedShipAsJson}>Save as JSON</button>
+          <input
+            type="file"
+            accept="application/json"
+            onChange={loadCustomizedShipFromJson}
+          />
+        </header>
 
-        
-      </header>
-
-      
         <NavBar ship={customizedship} refresh={refresh} />
         <main className="main">
-        <SelectShip
+          <SelectShip
             ship={currentship}
             shipsetter={setCurrentship}
             objectsetter={setCustomizedShip}
@@ -73,9 +76,7 @@ export default function App() {
         <p>
           Credit to DragonDean for his airship guide homebrew and to my little
           brother for the basic CSS/HTML template. 5e DND statblock by
-          https://codepen.io/retractedhack.
-
-          Favicon by Umeicon.
+          https://codepen.io/retractedhack. Favicon by Umeicon.
         </p>
       </aside>
     </div>

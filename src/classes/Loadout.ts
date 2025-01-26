@@ -28,18 +28,26 @@ export class Loadout {
       obj.innate = WeaponContainer.fromScratch(2, WeaponDirection.bow, isBrig);
       obj.innate.add("Battering Ram");
     }
-    obj.bow = BowContainer.fromScratch(parameters[0], WeaponDirection.bow, isBrig);
-    obj.port = SideContainer.fromScratch(parameters[1], WeaponDirection.port, isBrig);
+    obj.bow = BowContainer.fromScratch(
+      parameters[0],
+      WeaponDirection.bow,
+      isBrig,
+    );
+    obj.port = SideContainer.fromScratch(
+      parameters[1],
+      WeaponDirection.port,
+      isBrig,
+    );
     obj.starboard = SideContainer.fromScratch(
       parameters[2],
       WeaponDirection.starboard,
-      isBrig
+      isBrig,
     );
     obj.port.linkToContainer(obj.starboard);
     obj.stern = WeaponContainer.fromScratch(
       parameters[3],
       WeaponDirection.stern,
-      isBrig
+      isBrig,
     );
 
     return obj;
@@ -117,7 +125,7 @@ export class WeaponContainer {
   public static fromScratch(
     capacity: number,
     direction: WeaponDirection,
-    innateRam: boolean
+    innateRam: boolean,
   ): WeaponContainer {
     const obj = new WeaponContainer();
     obj.capacity = capacity;
@@ -237,7 +245,11 @@ export class BowContainer extends WeaponContainer {
     super();
   }
 
-  public static fromScratch(capacity: number, direction: WeaponDirection, innateRam: boolean): BowContainer {
+  public static fromScratch(
+    capacity: number,
+    direction: WeaponDirection,
+    innateRam: boolean,
+  ): BowContainer {
     const obj = new BowContainer();
     obj.capacity = capacity;
     obj.slotsused = 0;
@@ -276,7 +288,11 @@ export class SideContainer extends WeaponContainer {
     super();
   }
 
-  public static fromScratch(capacity: number, direction: WeaponDirection, innateRam: boolean) {
+  public static fromScratch(
+    capacity: number,
+    direction: WeaponDirection,
+    innateRam: boolean,
+  ) {
     const obj = new SideContainer();
     obj.capacity = capacity;
     obj.slotsused = 0;

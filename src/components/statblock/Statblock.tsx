@@ -30,8 +30,9 @@ export default function Statblock({
           <div className="creature-heading">
             <NameDisplayInput ship={ship} refresh={refresh} />
             <h2>
-              {capitalizeFirstLetter(ship.base.size.category)} Ship ({ship.base.name}),{" "}
-              {ship.base.size.area.length}x{ship.base.size.area.width}ft.
+              {capitalizeFirstLetter(ship.base.size.category)} Ship (
+              {ship.base.name}), {ship.base.size.area.length}x
+              {ship.base.size.area.width}ft.
             </h2>
           </div>
           <svg height="5" width="100%" className="tapered-rule">
