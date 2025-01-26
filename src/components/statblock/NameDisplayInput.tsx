@@ -15,7 +15,7 @@ function NameDisplayInput({ ship, refresh }: { ship: CustomizedShip, refresh: ()
   }
 
   useEffect(() => {
-    document.title = ship.name;
+    document.title = ship.name + " - Airship Builder";
   }, [ship.name]);
 
   return (

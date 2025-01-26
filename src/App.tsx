@@ -44,23 +44,26 @@ export default function App() {
 
   return (
     <div className="grid-container">
-      <header className="header">
-        <p>Ship generator</p>
-        <button onClick={saveCustomizedShipAsJson}>Save as JSON</button>
-        <input type="file" accept="application/json" onChange={loadCustomizedShipFromJson} />
-      </header>
-
       <NavContext.Provider
         value={{ state: navbar, setter: setNavbar } as NavbarStateType}
       >
+      <header className="header">
+        <p>Airship Builder</p>
+
+        <button onClick={saveCustomizedShipAsJson}>Save as JSON</button>
+        <input type="file" accept="application/json" onChange={loadCustomizedShipFromJson} />
+
+        
+      </header>
+
+      
         <NavBar ship={customizedship} refresh={refresh} />
         <main className="main">
-          <SelectShip
+        <SelectShip
             ship={currentship}
             shipsetter={setCurrentship}
             objectsetter={setCustomizedShip}
           />
-
           <Statblock ship={customizedship} refresh={refresh} />
         </main>
       </NavContext.Provider>
@@ -70,7 +73,9 @@ export default function App() {
         <p>
           Credit to DragonDean for his airship guide homebrew and to my little
           brother for the basic CSS/HTML template. 5e DND statblock by
-          https://codepen.io/retractedhack
+          https://codepen.io/retractedhack.
+
+          Favicon by Umeicon.
         </p>
       </aside>
     </div>

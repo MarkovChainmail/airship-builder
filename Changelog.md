@@ -1,3 +1,8 @@
+# V0.0.3
+- Saving/loading from json files added
+- Ability to name airships added (name is reflected in tab name and JSON filename)
+- Favicon added
+
 # V0.0.2
 - Round tonnage/engine operation time/fuel capacity to 2 decimals
 - Statblock displays magic core engine trait, automated pilot trait

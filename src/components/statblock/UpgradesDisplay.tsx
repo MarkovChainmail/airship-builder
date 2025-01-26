@@ -28,7 +28,7 @@ export default function UpgradesDisplay({
   };
 
   return (
-    <div className="property-block shipside" onClick={onClick}>
+    <div className="property-block clickable" onClick={onClick}>
       <h4>Upgrades</h4>
       <ul>
         <li key="protection">

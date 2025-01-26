@@ -57,7 +57,7 @@ export default function SelectShip({
   return (
     <Box sx={{ minWidth: 120 }}>
       <FormControl>
-        <InputLabel id="demo-simple-select-label">Select Your Ship</InputLabel>
+        <InputLabel id="demo-simple-select-label">New Ship</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
