@@ -44,6 +44,7 @@ export class Loadout {
       isBrig,
     );
     obj.port.linkToContainer(obj.starboard);
+    obj.port.link();
     obj.stern = WeaponContainer.fromScratch(
       parameters[3],
       WeaponDirection.stern,
@@ -299,6 +300,7 @@ export class SideContainer extends WeaponContainer {
     obj.weapons = {};
     obj.direction = direction;
     obj.innateRam = innateRam;
+    obj.isLinked = true;
     return obj;
   }
 
@@ -309,12 +311,12 @@ export class SideContainer extends WeaponContainer {
     obj.weapons = json.weapons;
     obj.direction = json.direction;
     obj.innateRam = json.innateRam;
+    obj.isLinked = json.isLinked;
     return obj;
   }
 
   linkToContainer(container: SideContainer) {
     this.linkedContainer = container;
-    this.link();
   }
 
   link(propagate: boolean = true) {
