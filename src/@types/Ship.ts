@@ -1,4 +1,4 @@
-import ships from "data/ships/shipdata.json";
+import ships from "../data/ships/shipdata.json";
 
 export type Ship = {
   name: string;

@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { CustomizedShip } from "../../classes/CustomizedShip";
 import { NavContext } from "../../App";
 import { NavbarStateType } from "../../@types/NavbarState";
+import LinkDisplay from "../LinkDisplay";
 
 export default function WeaponSides({ ship }: { ship: CustomizedShip }) {
   const { setter } = useContext(NavContext) as NavbarStateType;
@@ -50,9 +51,10 @@ export default function WeaponSides({ ship }: { ship: CustomizedShip }) {
             </li>
           )}
           <li key="port" className="clickable" onClick={setside("Port")}>
-            <p>
-              Port ({ship.loadout.port.slotsused}/{ship.loadout.port.capacity})
-            </p>
+            <p>Port ({ship.loadout.port.slotsused}/
+              {ship.loadout.port.capacity})
+            </p> 
+            <LinkDisplay isLinked={ship.loadout.port.isLinked} />
             <ul>
               {Object.entries(ship.loadout.port.weapons).map((data) => (
                 <li key={data[0]}>
@@ -70,6 +72,7 @@ export default function WeaponSides({ ship }: { ship: CustomizedShip }) {
               Starboard ({ship.loadout.starboard.slotsused}/
               {ship.loadout.starboard.capacity})
             </p>
+            <LinkDisplay isLinked={ship.loadout.port.isLinked} />
             <ul>
               {Object.entries(ship.loadout.starboard.weapons).map((data) => (
                 <li key={data[0]}>

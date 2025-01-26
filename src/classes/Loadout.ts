@@ -1,18 +1,20 @@
+import { link } from "fs";
 import { getWeapon, Weapon } from "../@types/Weapon";
 import { isSize, Size } from "../enums/Size";
 import { isWeaponDirection, WeaponDirection } from "../enums/WeaponDirection";
+import cloneDeep from "lodash.clonedeep";
 
 export class Loadout {
   innate?: WeaponContainer;
   bow: BowContainer;
-  port: WeaponContainer;
-  starboard: WeaponContainer;
+  port: SideContainer;
+  starboard: SideContainer;
   stern: WeaponContainer;
 
   private constructor() {
     this.bow = {} as BowContainer;
-    this.port = {} as WeaponContainer;
-    this.starboard = {} as WeaponContainer;
+    this.port = {} as SideContainer;
+    this.starboard = {} as SideContainer;
     this.stern = {} as WeaponContainer;
   }
 
@@ -27,12 +29,13 @@ export class Loadout {
       obj.innate.add("Battering Ram");
     }
     obj.bow = BowContainer.fromScratch(parameters[0], WeaponDirection.bow, isBrig);
-    obj.port = WeaponContainer.fromScratch(parameters[1], WeaponDirection.port, isBrig);
-    obj.starboard = WeaponContainer.fromScratch(
+    obj.port = SideContainer.fromScratch(parameters[1], WeaponDirection.port, isBrig);
+    obj.starboard = SideContainer.fromScratch(
       parameters[2],
       WeaponDirection.starboard,
       isBrig
     );
+    obj.port.linkToContainer(obj.starboard);
     obj.stern = WeaponContainer.fromScratch(
       parameters[3],
       WeaponDirection.stern,
@@ -48,8 +51,9 @@ export class Loadout {
       ? WeaponContainer.fromJSON(json.innate)
       : undefined;
     obj.bow = BowContainer.fromJSON(json.bow);
-    obj.port = WeaponContainer.fromJSON(json.port);
-    obj.starboard = WeaponContainer.fromJSON(json.starboard);
+    obj.port = SideContainer.fromJSON(json.port);
+    obj.starboard = SideContainer.fromJSON(json.starboard);
+    obj.port.linkToContainer(obj.starboard);
     obj.stern = WeaponContainer.fromJSON(json.stern);
     return obj;
   }
@@ -261,5 +265,73 @@ export class BowContainer extends WeaponContainer {
   uninstallKiteShield() {
     this.weapons = {};
     this.slotsused = 0;
+  }
+}
+
+export class SideContainer extends WeaponContainer {
+  linkedContainer?: SideContainer;
+  isLinked: boolean = false;
+
+  private constructor() {
+    super();
+  }
+
+  public static fromScratch(capacity: number, direction: WeaponDirection, innateRam: boolean) {
+    const obj = new SideContainer();
+    obj.capacity = capacity;
+    obj.slotsused = 0;
+    obj.weapons = {};
+    obj.direction = direction;
+    obj.innateRam = innateRam;
+    return obj;
+  }
+
+  public static fromJSON(json: any) {
+    const obj = new SideContainer();
+    obj.capacity = json.capacity;
+    obj.slotsused = json.slotsused;
+    obj.weapons = json.weapons;
+    obj.direction = json.direction;
+    obj.innateRam = json.innateRam;
+    return obj;
+  }
+
+  linkToContainer(container: SideContainer) {
+    this.linkedContainer = container;
+    this.link();
+  }
+
+  link(propagate: boolean = true) {
+    this.isLinked = true;
+    if (propagate && this.linkedContainer) {
+      this.linkedContainer.link(false);
+      this.linkedContainer.overwrite(this);
+    }
+  }
+
+  overwrite(other: SideContainer) {
+    this.weapons = cloneDeep(other.weapons);
+    this.slotsused = other.slotsused;
+  }
+
+  unlink(propagate: boolean = true) {
+    if (propagate && this.linkedContainer) {
+      this.linkedContainer.unlink(false);
+    }
+    this.isLinked = false;
+  }
+
+  add(weapon: string, propagate: boolean = true) {
+    super.add(weapon);
+    if (this.isLinked && this.linkedContainer && propagate) {
+      this.linkedContainer.add(weapon, false);
+    }
+  }
+
+  remove(weapon: string, propagate: boolean = true) {
+    super.remove(weapon);
+    if (this.isLinked && this.linkedContainer && propagate) {
+      this.linkedContainer.remove(weapon, false);
+    }
   }
 }

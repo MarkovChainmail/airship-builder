@@ -1,4 +1,4 @@
-import oiltankdata from "data/upgrades/oiltankdata.json";
+import oiltankdata from "../data/upgrades/oiltankdata.json";
 
 export type OilTank = {
   name: string;

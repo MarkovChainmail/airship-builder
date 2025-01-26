@@ -3,7 +3,7 @@ import MultiButton from "./MultiButton";
 import { ArmorType } from "../../enums/ArmorType";
 import { SailsType } from "../../enums/SailsType";
 import { MagicShieldType } from "../../enums/MagicShieldType";
-import upgradedata from "data/upgrades/upgradedata.json";
+import upgradedata from "../../data/upgrades/upgradedata.json";
 import { getDnDObject, getUpgrade } from "../../@types/Upgrade";
 import PropulsionForm from "./PropulsionForm";
 import OilTankPicker from "./OilTankPicker";

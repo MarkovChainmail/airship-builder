@@ -1,5 +1,5 @@
 import * as React from "react";
-import shiptraits from "data/ships/shiptraitsdata.json";
+import shiptraits from "../../data/ships/shiptraitsdata.json";
 
 function displayTrait({
   name,

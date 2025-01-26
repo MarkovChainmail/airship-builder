@@ -1,4 +1,4 @@
-import upgrades from "data/upgrades/upgradedata.json";
+import upgrades from "../data/upgrades/upgradedata.json";
 import { Size } from "../enums/Size";
 
 export type Upgrade = {

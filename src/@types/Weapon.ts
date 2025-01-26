@@ -1,4 +1,4 @@
-import weapondata from "data/weapons/weapondata.json";
+import weapondata from "../data/weapons/weapondata.json";
 
 export type Weapon = {
   name: string;

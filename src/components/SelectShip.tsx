@@ -4,7 +4,7 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
-import shipdata from "data/ships/shipdata.json";
+import shipdata from "../data/ships/shipdata.json";
 import { CustomizedShip } from "../classes/CustomizedShip";
 import { getShip, Ship } from "../@types/Ship";
 import { NavbarStateType } from "../@types/NavbarState";
