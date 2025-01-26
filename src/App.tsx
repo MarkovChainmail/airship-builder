@@ -26,7 +26,7 @@ export default function App() {
   function saveCustomizedShipAsJson(): void {
     const json = JSON.stringify(customizedship, undefined, 2);
     const blob = new Blob([json], { type: 'application/json' });
-    saveAs(blob, 'customizedship.json');
+    saveAs(blob, customizedship.name + '.json');
   }
 
   function loadCustomizedShipFromJson(event: React.ChangeEvent<HTMLInputElement>): void {
@@ -61,7 +61,7 @@ export default function App() {
             objectsetter={setCustomizedShip}
           />
 
-          <Statblock ship={customizedship} />
+          <Statblock ship={customizedship} refresh={refresh} />
         </main>
       </NavContext.Provider>
 

@@ -10,20 +10,27 @@ import {
 } from "../../functions/Utility";
 import TravelDisplay from "./TravelDisplay";
 import TraitsDisplay from "./TraitsDisplay";
+import NameDisplayInput from "./NameDisplayInput";
 
 // 5e statblock code from:
 // https://codepen.io/retractedhack/pen/gPLpWe
 
-export default function Statblock({ ship }: { ship: CustomizedShip }) {
+export default function Statblock({
+  ship,
+  refresh,
+}: {
+  ship: CustomizedShip;
+  refresh: () => void;
+}) {
   return (
     <div>
       <div className="stat-block wide">
         <hr className="orange-border" />
         <div className="section-left">
           <div className="creature-heading">
-            <h1>{ship.base.name}</h1>
+            <NameDisplayInput ship={ship} refresh={refresh} />
             <h2>
-              {capitalizeFirstLetter(ship.base.size.category)} Ship,{" "}
+              {capitalizeFirstLetter(ship.base.size.category)} Ship ({ship.base.name}),{" "}
               {ship.base.size.area.length}x{ship.base.size.area.width}ft.
             </h2>
           </div>

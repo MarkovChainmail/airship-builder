@@ -33,7 +33,7 @@ export default function WeaponSides({ ship }: { ship: CustomizedShip }) {
             </li>
           ) : null}
           {ship.loadout.bow.isRedundant() ? null : (
-            <li key="bow" className="shipside" onClick={setside("Bow")}>
+            <li key="bow" className="clickable" onClick={setside("Bow")}>
               <p>
                 Bow ({ship.loadout.bow.slotsused}/{ship.loadout.bow.capacity})
               </p>
@@ -49,7 +49,7 @@ export default function WeaponSides({ ship }: { ship: CustomizedShip }) {
               </ul>
             </li>
           )}
-          <li key="port" className="shipside" onClick={setside("Port")}>
+          <li key="port" className="clickable" onClick={setside("Port")}>
             <p>
               Port ({ship.loadout.port.slotsused}/{ship.loadout.port.capacity})
             </p>
@@ -63,7 +63,7 @@ export default function WeaponSides({ ship }: { ship: CustomizedShip }) {
           </li>
           <li
             key="starboard"
-            className="shipside"
+            className="clickable"
             onClick={setside("Starboard")}
           >
             <p>
@@ -79,7 +79,7 @@ export default function WeaponSides({ ship }: { ship: CustomizedShip }) {
             </ul>
           </li>
           {ship.loadout.stern.isRedundant() ? null : (
-            <li key="stern" className="shipside" onClick={setside("Stern")}>
+            <li key="stern" className="clickable" onClick={setside("Stern")}>
               <p>
                 Stern ({ship.loadout.stern.slotsused}/
                 {ship.loadout.stern.capacity})

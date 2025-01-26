@@ -311,12 +311,12 @@ body * {
   content: "\00a0";
 }
 
-.shipside {
+.clickable {
   text-decoration-line: underline;
   text-decoration-style: dotted;
 }
 
-.shipside:hover {
+.clickable:hover {
   color: #7a200d;
   cursor: pointer;
   text-decoration: none;

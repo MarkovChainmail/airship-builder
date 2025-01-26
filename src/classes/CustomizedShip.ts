@@ -7,6 +7,7 @@ import { Fuel } from "./Fuel";
 import { Propulsion } from "./Propulsion";
 
 export class CustomizedShip {
+  name: string;
   base: Ship;
   loadout: Loadout;
   upgrades: Upgrades;
@@ -17,10 +18,12 @@ export class CustomizedShip {
     this.base = {} as Ship;
     this.loadout = {} as Loadout;
     this.upgrades = {} as Upgrades;
+    this.name = "";
   }
 
   public static fromScratch(ship: Ship): CustomizedShip {
     const obj = new CustomizedShip();
+    obj.name = ship.name;
     obj.base = ship;
     obj.loadout = Loadout.fromScratch(ship.weaponslots, ship.name == "Brig");
     obj.upgrades = Upgrades.fromScratch(
@@ -40,6 +43,10 @@ export class CustomizedShip {
 
   public static fromJSON(json: any): CustomizedShip {
     const obj = CustomizedShip.fromScratch(getShip(json.base.name));
+
+    if(json.name) {
+      obj.name = json.name;
+    }
 
     obj.loadout = Loadout.fromJSON(json.loadout);
     obj.upgrades = Upgrades.fromJSON(obj.loadout.bow, json.upgrades);
